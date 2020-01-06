@@ -6,7 +6,7 @@
 #define FLIGHT_SIMULATOR__PARSER_H_
 
 class Parser {
-
+  void parse();
 };
 
 #endif //FLIGHT_SIMULATOR__PARSER_H_
