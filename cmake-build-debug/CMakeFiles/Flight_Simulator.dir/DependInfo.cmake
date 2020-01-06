@@ -4,13 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/shacharmeir/CLionProjects/Flight Simulator/Client.cpp" "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/Client.cpp.o"
-  "/Users/shacharmeir/CLionProjects/Flight Simulator/Command.cpp" "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/Command.cpp.o"
-  "/Users/shacharmeir/CLionProjects/Flight Simulator/Lexer.cpp" "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/Lexer.cpp.o"
-  "/Users/shacharmeir/CLionProjects/Flight Simulator/Server.cpp" "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/Server.cpp.o"
-  "/Users/shacharmeir/CLionProjects/Flight Simulator/main.cpp" "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/main.cpp.o"
+  "/home/yonathank/CLionProjects/Client.cpp" "/home/yonathank/CLionProjects/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/Client.cpp.o"
+  "/home/yonathank/CLionProjects/Command.cpp" "/home/yonathank/CLionProjects/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/Command.cpp.o"
+  "/home/yonathank/CLionProjects/Lexer.cpp" "/home/yonathank/CLionProjects/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/Lexer.cpp.o"
+  "/home/yonathank/CLionProjects/Parser.cpp" "/home/yonathank/CLionProjects/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/Parser.cpp.o"
+  "/home/yonathank/CLionProjects/Server.cpp" "/home/yonathank/CLionProjects/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/Server.cpp.o"
+  "/home/yonathank/CLionProjects/main.cpp" "/home/yonathank/CLionProjects/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
