@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/shacharmeir/CLionProjects/Flight Simulator/Lexer.cpp
+Lexer.h
+/Users/shacharmeir/CLionProjects/Flight Simulator/Lexer.h
+
+/Users/shacharmeir/CLionProjects/Flight Simulator/Lexer.h
+string
+-
+fstream
+-
+list
+-
+iostream
+-
+
+/Users/shacharmeir/CLionProjects/Flight Simulator/main.cpp
+iostream
+-
+Lexer.h
+/Users/shacharmeir/CLionProjects/Flight Simulator/Lexer.h
+
