@@ -70,14 +70,14 @@ void Lexer::remove_quotation(std::string& str){
   }
   str = tmp;
 }
-std::list<std::string> Lexer::split(const char token, std::string& str) {
-  std::list<std::string> list;
+std::vector<std::string> Lexer::split(const char token, std::string& str) {
+  std::vector<std::string> vector;
   std::string temp;
   bool in_text = false;
   for(char& c:str){
     if (!in_text) {
       if (c == token) {
-        list.push_back(temp);
+        vector.push_back(temp);
         temp = std::string();
       } else {
         temp += c;
@@ -93,9 +93,9 @@ std::list<std::string> Lexer::split(const char token, std::string& str) {
     }
   }
   if(!temp.empty()){
-    list.push_back(temp);
+    vector.push_back(temp);
   }
-  return list;
+  return vector;
 }
 
 void Lexer::strip(std::string& str) {
@@ -109,15 +109,15 @@ void Lexer::strip(std::string& str) {
   }
   str = tmp;
 }
-//list methods
-void Lexer::printList(std::list<std::string> list){
-  for(std::string s: list){
+//vector methods
+void Lexer::printvector(std::vector<std::string> vector){
+  for(std::string s: vector){
     std::cout<<s<<std::endl;
   }
 }
 
-void Lexer::copyCommands( const std::list<std::string>& list) {
-  for(const std::string& s: list){
+void Lexer::copyCommands( const std::vector<std::string>& vector) {
+  for(const std::string& s: vector){
     this->commends.push_back(s);
   }
 }
@@ -139,7 +139,7 @@ bool isVar(std::string& str) {
   return str.substr(0, 3) == "var";
 }
 bool isPrint(std::string& str) {
-  return str.substr(0, 5) == "print";
+  return str.substr(0, 5) == "Print";
 }
 bool isCondition(std::string& str) {
   return str.substr(0, 5) == "while" || str.substr(0, 2) == "if";
@@ -171,12 +171,12 @@ void Lexer::lex() {
       this->replace(')',"",line);
       this->replace(','," ", line);
       this->remove_redundant_signs(line);
-      std::list<std::string>list = split(' ', line);
-      this->copyCommands(list);*/
+      std::vector<std::string>vector = split(' ', line);
+      this->copyCommands(vector);*/
     }
     i++;
   }
-  this->printList(this->commends);
+  this->printvector(this->commends);
 }
 void Lexer::hanleOpenDataServer(std::string basic_string) {
 

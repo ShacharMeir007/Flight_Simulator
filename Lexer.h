@@ -7,21 +7,22 @@
 
 #include <string>
 #include <fstream>
-#include <list>
+#include <vector>
 #include <iostream>
+#include <vector>
 class Lexer {
  private:
   //members
   std::ifstream input_stream;
-  std::list<std::string> commends;
+  std::vector<std::string> commends;
   //private methods
   //text methods
   void replace(const char token1, const std::string &token2, std::string &str);
   void remove_redundant_signs(std::string &str);
-  std::list<std::string> split(const char token, std::string &str);
-  //list methods
-  void copyCommands(const std::list<std::string>& list);
-  void printList(std::list<std::string> list);
+  std::vector<std::string> split(const char token, std::string &str);
+  //vector methods
+  void copyCommands(const std::vector<std::string>& vector);
+  void printvector(std::vector<std::string> vector);
   //file methods
   std::string readLine();
   //public methods
