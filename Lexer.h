@@ -31,6 +31,12 @@ class Lexer {
   void lex();
 
   void remove_quotation(std::string &str);
+  void strip(std::string &str);
+  void hanleOpenDataServer(std::string basic_string);
+  void hanleConnectControlClient(std::string basic_string);
+  void hanleVar(std::string basic_string);
+  void hanleCondition(std::string basic_string);
+  void hanlePrint(std::string basic_string);
 };
 
 #endif //FLIGHT_SIMULATOR__LEXER_H_

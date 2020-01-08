@@ -98,6 +98,17 @@ std::list<std::string> Lexer::split(const char token, std::string& str) {
   return list;
 }
 
+void Lexer::strip(std::string& str) {
+  std::string tmp;
+  int i = 1;
+  for (char c: str) {
+    if (!(i==1 || i - str.length())){
+      tmp += c;
+    }
+    i++;
+  }
+  str = tmp;
+}
 //list methods
 void Lexer::printList(std::list<std::string> list){
   for(std::string s: list){
@@ -118,17 +129,67 @@ std::string Lexer::readLine() {
   std::getline(input_stream,line);
   return line;
 }
+bool isOpenDataServer(std::string& str) {
+  return str.substr(0, 14) == "openDataServer";
+}
+bool isConnectControlClient(std::string& str) {
+  return str.substr(0, 20) == "connectControlClient";
+}
+bool isVar(std::string& str) {
+  return str.substr(0, 3) == "var";
+}
+bool isPrint(std::string& str) {
+  return str.substr(0, 5) == "print";
+}
+bool isCondition(std::string& str) {
+  return str.substr(0, 5) == "while" || str.substr(0, 2) == "if";
+}
 
 //public methods
 void Lexer::lex() {
   std::string line;
+  int i = 1;
   while (!(line = readLine()).empty()){
-    this->replace('('," ",line);
-    this->replace(')',"",line);
-    this->replace(','," ", line);
-    this->remove_redundant_signs(line);
-    std::list<std::string>list = split(' ', line);
-    this->copyCommands(list);
+    //strip(line);
+    if(isOpenDataServer(line)){
+      std::cout<< i<<".open"<< std::endl;
+      hanleOpenDataServer(line);
+    } else if(isConnectControlClient(line)){
+      std::cout<< i<<".connect"<< std::endl;
+      hanleConnectControlClient(line);
+    } else if(isVar(line)){
+      std::cout<< i<<".var"<< std::endl;
+      hanleVar(line);
+    } else if(isCondition(line)){
+      std::cout<< i<<".condition"<< std::endl;
+      hanleCondition(line);
+    } else if(isPrint(line)){
+      std::cout<< i<<".print"<< std::endl;
+      hanlePrint(line);
+    } else {
+      /*this->replace('('," ",line);
+      this->replace(')',"",line);
+      this->replace(','," ", line);
+      this->remove_redundant_signs(line);
+      std::list<std::string>list = split(' ', line);
+      this->copyCommands(list);*/
+    }
+    i++;
   }
   this->printList(this->commends);
+}
+void Lexer::hanleOpenDataServer(std::string basic_string) {
+
+}
+void Lexer::hanleConnectControlClient(std::string basic_string) {
+
+}
+void Lexer::hanleVar(std::string basic_string) {
+
+}
+void Lexer::hanleCondition(std::string basic_string) {
+
+}
+void Lexer::hanlePrint(std::string basic_string) {
+
 }

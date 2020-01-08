@@ -1,4 +1,3 @@
-/*
 //
 // Created by shachar Meir on 06/01/2020.
 //
@@ -9,17 +8,17 @@
 #include <iostream>
 #include <unistd.h>
 #include <netinet/in.h>
-
+#include <thread>
 
 #define PORT 5400
-int main(int argc, char const *argv[])
+void runDataServer()
 {
+
   //create socket
   int socketfd = socket(AF_INET, SOCK_STREAM, 0);
   if (socketfd == -1) {
     //error
     std::cerr << "Could not create a socket"<<std::endl;
-    return -1;
   }
 
   //bind socket to IP address
@@ -34,13 +33,11 @@ int main(int argc, char const *argv[])
   //the actual bind command
   if (bind(socketfd, (struct sockaddr *) &address, sizeof(address)) == -1) {
     std::cerr<<"Could not bind the socket to an IP"<<std::endl;
-    return -2;
   }
 
   //making socket listen to the port
   if (listen(socketfd, 5) == -1) { //can also set to SOMAXCON (max connections)
     std::cerr<<"Error during listening command"<<std::endl;
-    return -3;
   } else{
     std::cout<<"Server is now listening ..."<<std::endl;
   }
@@ -51,20 +48,24 @@ int main(int argc, char const *argv[])
 
   if (client_socket == -1) {
     std::cerr<<"Error accepting client"<<std::endl;
-    return -4;
+
   }
 
   close(socketfd); //closing the listening socket
 
   //reading from client
-  char buffer[1024] = {0};
-  int valread = read( client_socket , buffer, 1024);
-  std::cout<<buffer<<std::endl;
-
+  while (true) {
+    char buffer[1024] = {0};
+    int valread = read(client_socket, buffer, 1024);
+    std::cout << buffer << std::endl;
+  }
   //writing back to client
-  char *hello = "Hello, I can hear you! \n";
+  /*char *hello = "Hello, I can hear you! \n";
   send(client_socket , hello , strlen(hello) , 0 );
-  std::cout<<"Hello message sent\n"<<std::endl;
-  return 0;
+  std::cout<<"Hello message sent\n"<<std::endl;*/
 
-}*/
+}
+void openDataServer(){
+  std::thread thread1(runDataServer);
+  thread1.join();
+}
