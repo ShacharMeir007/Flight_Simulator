@@ -165,18 +165,17 @@ void Lexer::lex() {
     this->replace(')',"",line);
     this->replace(','," ", line);
     this->remove_redundant_signs(line);
-    //this->remove_quotation(line);
     std::vector<std::string> vector = split(' ', line);
     if(isVar(line)){
       handleVar(vector);
     } else if(isCondition(line)){
-      handleCondition(line);
+      handleCondition(vector);
     } else if(isPrint(line)){
-      handlePrint(line);
+      handlePrint(vector);
     } else if(isAssign(line)) {
       handleAssign(vector);
     }
-    handleGeneral(vector);
+    handleQuotation(vector);
     this->copyCommands(vector);
     i++;
   }
@@ -194,13 +193,31 @@ void Lexer::handleVar(std::vector<std::string>& basic_string) {
   }
   basic_string = elements;
 }
-void Lexer::handleCondition(std::string basic_string) {
+void Lexer::handleCondition(std::vector<std::string>& vector) {
+  std::vector<std::string> newVec;
+  std::string expressionString1;
+  std::string expressionString2;
+  newVec.push_back(vector[0]);
+  int i =1;
+  while (!isLogicOperator(vector[i])){
+    expressionString1 += vector[i];
+    i++;
+  }
+  newVec.push_back(expressionString1);
+  newVec.push_back(vector[i]);
+  i++;
+  while (vector[i]!="{"){
+    expressionString2 += vector[i];
+    i++;
+  }
+  newVec.push_back(expressionString2);
+  newVec.push_back(vector[i]);
+  vector = newVec;
+}
+void Lexer::handlePrint(std::vector<std::string>& vector) {
 
 }
-void Lexer::handlePrint(std::string basic_string) {
-
-}
-void Lexer::handleGeneral(std::vector<std::string>& vector) {
+void Lexer::handleQuotation(std::vector<std::string>& vector) {
   for (std::string& s: vector){
     remove_quotation(s);
   }
@@ -218,4 +235,13 @@ void Lexer::handleAssign(std::vector<std::string> &vector) {
   }
   newVec.push_back(expressionString);
   vector = newVec;
+}
+bool Lexer::isLogicOperator(std::string &str) {
+  const std::string operators[] = {">", "<", ">=", "<=","==", "!="};
+  for (const std::string& s: operators){
+    if (s == str){
+      return true;
+    }
+  }
+  return false;
 }

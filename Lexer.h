@@ -34,10 +34,11 @@ class Lexer {
   void remove_quotation(std::string &str);
   void strip(std::string &str);
   void handleVar(std::vector<std::string>& basic_string);
-  void handleCondition(std::string basic_string);
-  void handlePrint(std::string basic_string);
-  void handleGeneral(std::vector<std::string>& vector);
+  void handleCondition(std::vector<std::string>& vector);
+  void handlePrint(std::vector<std::string>& vector);
+  void handleQuotation(std::vector<std::string>& vector);
   void handleAssign(std::vector<std::string> &vector);
+  bool isLogicOperator(std::string &str);
 };
 
 #endif //FLIGHT_SIMULATOR__LEXER_H_
