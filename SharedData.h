@@ -4,7 +4,9 @@
 
 #ifndef FLIGHT_SIMULATOR__SHAREDDATA_H_
 #define FLIGHT_SIMULATOR__SHAREDDATA_H_
-//this class is for shared data the thread might need
+//This class is for shared data the thread might need.
+//Every time you need to share data between threads you'll use
+//this class.
 class SharedData {
 
 };
