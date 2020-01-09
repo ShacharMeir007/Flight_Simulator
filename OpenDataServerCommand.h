@@ -6,7 +6,7 @@
 #define FLIGHT_SIMULATOR__OPENDATASERVERCOMMAND_H_
 #include "Command.h"
 class OpenDataServerCommand: public Command {
-  void execute(SharedData shared_data) override;
+  void execute() override;
   int numArg() override;
 };
 

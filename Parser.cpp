@@ -6,6 +6,4 @@
 void Parser::parse() {
 
 }
-Parser::Parser() {
-
-}
+Parser::Parser() = default;
