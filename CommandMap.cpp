@@ -3,7 +3,7 @@
 //
 
 #include "CommandMap.h"
-Command* CommandMap::getCommand(std::string s) {
+Command* CommandMap::getCommand(std::string& s) {
   try {
     Command* command = map_.at(s);
     return command;
@@ -12,10 +12,10 @@ Command* CommandMap::getCommand(std::string s) {
     return nullptr;
   }
 
-
 }
-CommandMap::CommandMap() {
-  map_["openDataServer"] = new OpenDataServerCommand();
-  map_["Print"] = new PrintCommand();
-  map_["Sleep"] = new SleepCommand();
+CommandMap::CommandMap(SharedData* data) {
+  map_["openDataServer"] = new OpenDataServerCommand(data);
+  map_["Print"] = new PrintCommand(data);
+  map_["Sleep"] = new SleepCommand(data);
+  map_["var"] = new VarCommand(data);
 }

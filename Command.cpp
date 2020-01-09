@@ -3,3 +3,6 @@
 //
 
 #include "Command.h"
+Command::Command(SharedData * shared) {
+  this->shared_data = shared;
+}

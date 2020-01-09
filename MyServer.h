@@ -11,6 +11,6 @@
 #include <netinet/in.h>
 #include <thread>
 #include "Parser.h"
-void runDataServer(int port);
-void openDataServer(int port);
+void runDataServer(int port, SharedData* data);
+void openDataServer(int port, SharedData* data);
 #endif //FLIGHT_SIMULATOR__MYSERVER_H_

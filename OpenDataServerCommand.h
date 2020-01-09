@@ -7,6 +7,9 @@
 #include "Command.h"
 
 class OpenDataServerCommand: public Command {
+ public:
+  OpenDataServerCommand(SharedData *data);
+ private:
   void execute(std::vector<std::string>& args) override;
   int numArg() override;
 };

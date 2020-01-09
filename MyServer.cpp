@@ -5,7 +5,7 @@
 #define FLIGHT_SIMULATOR__SERVER_H_
 // Server side C/C++ program to demonstrate Socket programming
 #include "MyServer.h"
-void runDataServer(int port)
+void runDataServer(int port, SharedData* data)
 {
 
   //create socket
@@ -59,8 +59,8 @@ void runDataServer(int port)
   std::cout<<"Hello message sent\n"<<std::endl;*/
 
 }
-void openDataServer(int port){
-  std::thread thread1(runDataServer, port);
-  thread1.detach();
+void openDataServer(int port, SharedData* shared_data){
+  std::thread thread1(runDataServer, port, shared_data);
+  thread1.join();
 }
 #endif //FLIGHT_SIMULATOR__MYSERVER_H_

@@ -6,9 +6,10 @@
 Parser::Parser(std::vector<std::string> *stringCommands) {
   string_commands_ = stringCommands;
 }
-void Parser::parse() {
+void Parser::parse(SharedData* data) {
+
   int size = string_commands_->size(), index = 0, numArgs;
-  CommandMap cm = CommandMap();
+  CommandMap cm = CommandMap(data);
   Command *c;
   std::vector<std::string> *args;
   while (index < size) {

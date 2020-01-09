@@ -12,8 +12,8 @@ class Parser {
  private:
   std::vector<std::string> *string_commands_;
  public:
-  static SharedData shared_data_;
-  void parse();
+
+  void parse(SharedData* data);
   Parser(std::vector<std::string> *stringCommands);
 };
 

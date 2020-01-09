@@ -6,6 +6,9 @@
 #define FLIGHT_SIMULATOR__SLEEPCOMMAND_H_
 #include "Command.h"
 class SleepCommand: public Command {
+ public:
+  SleepCommand(SharedData *data);
+ private:
   void execute(std::vector<std::string> &args) override;
   int numArg() override;
 };

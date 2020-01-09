@@ -4,7 +4,9 @@
 
 #include "SharedData.h"
 SharedData::SharedData() {
-
+  this->vars_left_Bind = new std::vector<std::string>();
+  this->vars_right_Bind = new std::vector<std::string>();
+  this->symbol_table_ = new SymbolTable();
 }
 SharedData::~SharedData() {
 

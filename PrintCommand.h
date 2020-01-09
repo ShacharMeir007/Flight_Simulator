@@ -7,6 +7,9 @@
 #include "Command.h"
 #include <iostream>
 class PrintCommand: public Command {
+ public:
+  explicit PrintCommand(SharedData *data);
+ private:
   void execute(std::vector<std::string> &args) override;
   int numArg() override;
 

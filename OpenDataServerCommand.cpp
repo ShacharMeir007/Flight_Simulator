@@ -13,8 +13,9 @@ void OpenDataServerCommand::execute(std::vector<std::string>& args) {
   std::stringstream geek(port_str);
   int port = 0;
   geek>>port;
-  openDataServer(port);
+  openDataServer(port,this->shared_data);
 }
 int OpenDataServerCommand::numArg() {
   return 1;
 }
+OpenDataServerCommand::OpenDataServerCommand(SharedData *data) : Command(data) {}

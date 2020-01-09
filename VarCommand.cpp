@@ -4,21 +4,21 @@
 
 #include "VarCommand.h"
 void VarCommand::execute(std::vector<std::string> &args) {
-  /*if (args.size() != numArg()){
+  if (args.size() != numArg()){
     throw "Not amount of arguments required";
   }
   std::string var_name = args[0];
   std::string bind = args[1];
   std::string sim = args[2];
   Symbol symbol(0, sim);
-  SymbolTable* symbol_table = Parser::shared_data_.GetSymbolTable();
+  SymbolTable* symbol_table = this->shared_data->GetSymbolTable();
   if (symbol_table){
     symbol_table->add(var_name, symbol);
   } else {
     throw "symbol table was not initialized";
   }
   if (bind == "->"){
-    std::vector<std::string>* right_bind = Parser::shared_data_.GetVarsRightBind();
+    std::vector<std::string>* right_bind = this->shared_data->GetVarsRightBind();
     if (right_bind){
       right_bind->push_back(var_name);
     } else {
@@ -26,7 +26,7 @@ void VarCommand::execute(std::vector<std::string> &args) {
     }
 
   } else if (bind == "<-"){
-    std::vector<std::string>* left_bind = Parser::shared_data_.GetVarsLeftBind();
+    std::vector<std::string>* left_bind = this->shared_data->GetVarsLeftBind();
     if (left_bind){
       left_bind->push_back(var_name);
     } else {
@@ -34,7 +34,7 @@ void VarCommand::execute(std::vector<std::string> &args) {
     }
   } else {
     throw "couldn't find bind type";
-  }*/
+  }
 }
 int VarCommand::numArg() {
   return 3;
