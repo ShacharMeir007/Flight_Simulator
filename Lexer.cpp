@@ -4,6 +4,8 @@
 
 
 #include "Lexer.h"
+#include "Expression/ex1.h"
+#include "Expression/Interpreter.h"
 //constructor
 Lexer::Lexer(const std::string& filename) {
   this->input_stream.open(filename);
@@ -141,6 +143,14 @@ bool isVar(std::string& str) {
 bool isPrint(std::string& str) {
   return str.substr(0, 5) == "Print";
 }
+bool isAssign(std::string& str) {
+  for (char& c: str){
+    if(c=='=') {
+      return true;
+    }
+  }
+  return false;
+}
 bool isCondition(std::string& str) {
   return str.substr(0, 5) == "while" || str.substr(0, 2) == "if";
 }
@@ -155,6 +165,7 @@ void Lexer::lex() {
     this->replace(')',"",line);
     this->replace(','," ", line);
     this->remove_redundant_signs(line);
+    //this->remove_quotation(line);
     std::vector<std::string> vector = split(' ', line);
     if(isVar(line)){
       handleVar(vector);
@@ -162,7 +173,10 @@ void Lexer::lex() {
       handleCondition(line);
     } else if(isPrint(line)){
       handlePrint(line);
+    } else if(isAssign(line)) {
+      handleAssign(vector);
     }
+    handleGeneral(vector);
     this->copyCommands(vector);
     i++;
   }
@@ -185,4 +199,23 @@ void Lexer::handleCondition(std::string basic_string) {
 }
 void Lexer::handlePrint(std::string basic_string) {
 
+}
+void Lexer::handleGeneral(std::vector<std::string>& vector) {
+  for (std::string& s: vector){
+    remove_quotation(s);
+  }
+}
+void Lexer::handleAssign(std::vector<std::string> &vector) {
+  std::vector<std::string> newVec;
+  std::string expressionString;
+  //adding the '='
+  newVec.push_back(vector[1]);
+  //adding var name
+  newVec.push_back(vector[0]);
+  //creating Expression string
+  for (int kI = 2; kI < vector.size() ; ++kI) {
+    expressionString += vector[kI];
+  }
+  newVec.push_back(expressionString);
+  vector = newVec;
 }

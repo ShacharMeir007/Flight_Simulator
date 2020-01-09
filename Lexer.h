@@ -36,6 +36,8 @@ class Lexer {
   void handleVar(std::vector<std::string>& basic_string);
   void handleCondition(std::string basic_string);
   void handlePrint(std::string basic_string);
+  void handleGeneral(std::vector<std::string>& vector);
+  void handleAssign(std::vector<std::string> &vector);
 };
 
 #endif //FLIGHT_SIMULATOR__LEXER_H_
