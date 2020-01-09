@@ -10,6 +10,7 @@
 #include <vector>
 #include <iostream>
 #include <vector>
+#include "TextFunctions.h"
 class Lexer {
  private:
   //members
@@ -17,9 +18,6 @@ class Lexer {
   std::vector<std::string> commends;
   //private methods
   //text methods
-  void replace(const char token1, const std::string &token2, std::string &str);
-  void remove_redundant_signs(std::string &str);
-  std::vector<std::string> split(const char token, std::string &str);
   //vector methods
   void copyCommands(const std::vector<std::string>& vector);
   void printVector(std::vector<std::string> vector);
@@ -29,10 +27,8 @@ class Lexer {
  public:
   explicit Lexer(const std::string&);
   virtual ~Lexer();
-  void lex();
+  std::vector<std::string> lex();
 
-  void remove_quotation(std::string &str);
-  void strip(std::string &str);
   void handleVar(std::vector<std::string>& basic_string);
   void handleCondition(std::vector<std::string>& vector);
   void handleQuotation(std::vector<std::string>& vector);

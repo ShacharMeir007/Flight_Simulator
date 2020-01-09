@@ -4,7 +4,7 @@
 
 #include <sstream>
 #include "OpenDataServerCommand.h"
-#include "Server.cpp"
+#include "MyServer.h"
 void OpenDataServerCommand::execute(std::vector<std::string>& args) {
   if (args.size() != numArg()){
     throw "Not amount of arguments required";

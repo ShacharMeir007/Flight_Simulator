@@ -98,6 +98,12 @@
 		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Lexer.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/MyServer.cpp">
+			<Option target="Flight_Simulator"/>
+		</Unit>
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/MyServer.h">
+			<Option target="Flight_Simulator"/>
+		</Unit>
 		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/OpenDataServerCommand.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
@@ -110,13 +116,22 @@
 		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Parser.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Server.cpp">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/PrintCommand.cpp">
+			<Option target="Flight_Simulator"/>
+		</Unit>
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/PrintCommand.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
 		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/SharedData.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
 		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/SharedData.h">
+			<Option target="Flight_Simulator"/>
+		</Unit>
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/SleepCommand.cpp">
+			<Option target="Flight_Simulator"/>
+		</Unit>
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/SleepCommand.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
 		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Symbol.cpp">
@@ -129,6 +144,18 @@
 			<Option target="Flight_Simulator"/>
 		</Unit>
 		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/SymbolTable.h">
+			<Option target="Flight_Simulator"/>
+		</Unit>
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/TextFunctions.cpp">
+			<Option target="Flight_Simulator"/>
+		</Unit>
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/TextFunctions.h">
+			<Option target="Flight_Simulator"/>
+		</Unit>
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/VarCommand.cpp">
+			<Option target="Flight_Simulator"/>
+		</Unit>
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/VarCommand.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
 		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/main.cpp">

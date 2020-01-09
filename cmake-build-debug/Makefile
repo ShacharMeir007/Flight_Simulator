@@ -204,6 +204,33 @@ Lexer.cpp.s:
 	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Lexer.cpp.s
 .PHONY : Lexer.cpp.s
 
+MyServer.o: MyServer.cpp.o
+
+.PHONY : MyServer.o
+
+# target to build an object file
+MyServer.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o
+.PHONY : MyServer.cpp.o
+
+MyServer.i: MyServer.cpp.i
+
+.PHONY : MyServer.i
+
+# target to preprocess a source file
+MyServer.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/MyServer.cpp.i
+.PHONY : MyServer.cpp.i
+
+MyServer.s: MyServer.cpp.s
+
+.PHONY : MyServer.s
+
+# target to generate assembly for a file
+MyServer.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/MyServer.cpp.s
+.PHONY : MyServer.cpp.s
+
 OpenDataServerCommand.o: OpenDataServerCommand.cpp.o
 
 .PHONY : OpenDataServerCommand.o
@@ -258,32 +285,32 @@ Parser.cpp.s:
 	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Parser.cpp.s
 .PHONY : Parser.cpp.s
 
-Server.o: Server.cpp.o
+PrintCommand.o: PrintCommand.cpp.o
 
-.PHONY : Server.o
+.PHONY : PrintCommand.o
 
 # target to build an object file
-Server.cpp.o:
-	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Server.cpp.o
-.PHONY : Server.cpp.o
+PrintCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/PrintCommand.cpp.o
+.PHONY : PrintCommand.cpp.o
 
-Server.i: Server.cpp.i
+PrintCommand.i: PrintCommand.cpp.i
 
-.PHONY : Server.i
+.PHONY : PrintCommand.i
 
 # target to preprocess a source file
-Server.cpp.i:
-	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Server.cpp.i
-.PHONY : Server.cpp.i
+PrintCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/PrintCommand.cpp.i
+.PHONY : PrintCommand.cpp.i
 
-Server.s: Server.cpp.s
+PrintCommand.s: PrintCommand.cpp.s
 
-.PHONY : Server.s
+.PHONY : PrintCommand.s
 
 # target to generate assembly for a file
-Server.cpp.s:
-	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Server.cpp.s
-.PHONY : Server.cpp.s
+PrintCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/PrintCommand.cpp.s
+.PHONY : PrintCommand.cpp.s
 
 SharedData.o: SharedData.cpp.o
 
@@ -311,6 +338,33 @@ SharedData.s: SharedData.cpp.s
 SharedData.cpp.s:
 	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/SharedData.cpp.s
 .PHONY : SharedData.cpp.s
+
+SleepCommand.o: SleepCommand.cpp.o
+
+.PHONY : SleepCommand.o
+
+# target to build an object file
+SleepCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/SleepCommand.cpp.o
+.PHONY : SleepCommand.cpp.o
+
+SleepCommand.i: SleepCommand.cpp.i
+
+.PHONY : SleepCommand.i
+
+# target to preprocess a source file
+SleepCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/SleepCommand.cpp.i
+.PHONY : SleepCommand.cpp.i
+
+SleepCommand.s: SleepCommand.cpp.s
+
+.PHONY : SleepCommand.s
+
+# target to generate assembly for a file
+SleepCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/SleepCommand.cpp.s
+.PHONY : SleepCommand.cpp.s
 
 Symbol.o: Symbol.cpp.o
 
@@ -366,6 +420,60 @@ SymbolTable.cpp.s:
 	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/SymbolTable.cpp.s
 .PHONY : SymbolTable.cpp.s
 
+TextFunctions.o: TextFunctions.cpp.o
+
+.PHONY : TextFunctions.o
+
+# target to build an object file
+TextFunctions.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/TextFunctions.cpp.o
+.PHONY : TextFunctions.cpp.o
+
+TextFunctions.i: TextFunctions.cpp.i
+
+.PHONY : TextFunctions.i
+
+# target to preprocess a source file
+TextFunctions.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/TextFunctions.cpp.i
+.PHONY : TextFunctions.cpp.i
+
+TextFunctions.s: TextFunctions.cpp.s
+
+.PHONY : TextFunctions.s
+
+# target to generate assembly for a file
+TextFunctions.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/TextFunctions.cpp.s
+.PHONY : TextFunctions.cpp.s
+
+VarCommand.o: VarCommand.cpp.o
+
+.PHONY : VarCommand.o
+
+# target to build an object file
+VarCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o
+.PHONY : VarCommand.cpp.o
+
+VarCommand.i: VarCommand.cpp.i
+
+.PHONY : VarCommand.i
+
+# target to preprocess a source file
+VarCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.i
+.PHONY : VarCommand.cpp.i
+
+VarCommand.s: VarCommand.cpp.s
+
+.PHONY : VarCommand.s
+
+# target to generate assembly for a file
+VarCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.s
+.PHONY : VarCommand.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -411,24 +519,36 @@ help:
 	@echo "... Lexer.o"
 	@echo "... Lexer.i"
 	@echo "... Lexer.s"
+	@echo "... MyServer.o"
+	@echo "... MyServer.i"
+	@echo "... MyServer.s"
 	@echo "... OpenDataServerCommand.o"
 	@echo "... OpenDataServerCommand.i"
 	@echo "... OpenDataServerCommand.s"
 	@echo "... Parser.o"
 	@echo "... Parser.i"
 	@echo "... Parser.s"
-	@echo "... Server.o"
-	@echo "... Server.i"
-	@echo "... Server.s"
+	@echo "... PrintCommand.o"
+	@echo "... PrintCommand.i"
+	@echo "... PrintCommand.s"
 	@echo "... SharedData.o"
 	@echo "... SharedData.i"
 	@echo "... SharedData.s"
+	@echo "... SleepCommand.o"
+	@echo "... SleepCommand.i"
+	@echo "... SleepCommand.s"
 	@echo "... Symbol.o"
 	@echo "... Symbol.i"
 	@echo "... Symbol.s"
 	@echo "... SymbolTable.o"
 	@echo "... SymbolTable.i"
 	@echo "... SymbolTable.s"
+	@echo "... TextFunctions.o"
+	@echo "... TextFunctions.i"
+	@echo "... TextFunctions.s"
+	@echo "... VarCommand.o"
+	@echo "... VarCommand.i"
+	@echo "... VarCommand.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -4,7 +4,7 @@
 
 #include "VarCommand.h"
 void VarCommand::execute(std::vector<std::string> &args) {
-  if (args.size() != numArg()){
+  /*if (args.size() != numArg()){
     throw "Not amount of arguments required";
   }
   std::string var_name = args[0];
@@ -34,7 +34,7 @@ void VarCommand::execute(std::vector<std::string> &args) {
     }
   } else {
     throw "couldn't find bind type";
-  }
+  }*/
 }
 int VarCommand::numArg() {
   return 3;
