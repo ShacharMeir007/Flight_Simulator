@@ -3,6 +3,9 @@
 //
 
 #include "OpenDataServerCommand.h"
-int OpenDataServerCommand::execute(SharedData shared_data) {
-  return 0;
+void OpenDataServerCommand::execute(SharedData shared_data) {
+
+}
+int OpenDataServerCommand::numArg() {
+  return 1;
 }
