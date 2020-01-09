@@ -5,14 +5,32 @@ CMakeFiles/Flight_Simulator.dir/Client.cpp.o: ../Client.cpp
 
 CMakeFiles/Flight_Simulator.dir/Command.cpp.o: ../Command.cpp
 CMakeFiles/Flight_Simulator.dir/Command.cpp.o: ../Command.h
+CMakeFiles/Flight_Simulator.dir/Command.cpp.o: ../SharedData.h
 
 CMakeFiles/Flight_Simulator.dir/Lexer.cpp.o: ../Lexer.cpp
 CMakeFiles/Flight_Simulator.dir/Lexer.cpp.o: ../Lexer.h
 
+CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../Command.h
+CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../OpenDataServerCommand.cpp
+CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../OpenDataServerCommand.h
+CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../SharedData.h
+
 CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../Parser.cpp
 CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../Parser.h
+CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../SharedData.h
 
 CMakeFiles/Flight_Simulator.dir/Server.cpp.o: ../Server.cpp
+CMakeFiles/Flight_Simulator.dir/Server.cpp.o: ../SharedData.h
+
+CMakeFiles/Flight_Simulator.dir/SharedData.cpp.o: ../SharedData.cpp
+CMakeFiles/Flight_Simulator.dir/SharedData.cpp.o: ../SharedData.h
+
+CMakeFiles/Flight_Simulator.dir/Symbol.cpp.o: ../Symbol.cpp
+CMakeFiles/Flight_Simulator.dir/Symbol.cpp.o: ../Symbol.h
+
+CMakeFiles/Flight_Simulator.dir/SymbolTable.cpp.o: ../Symbol.h
+CMakeFiles/Flight_Simulator.dir/SymbolTable.cpp.o: ../SymbolTable.cpp
+CMakeFiles/Flight_Simulator.dir/SymbolTable.cpp.o: ../SymbolTable.h
 
 CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../Lexer.h
 CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../main.cpp

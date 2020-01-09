@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/shacharmeir/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.5662.56/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = /home/yonathank/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.5233.103/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = "/Users/shacharmeir/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.5662.56/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = /home/yonathank/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.5233.103/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/shacharmeir/CLionProjects/Flight Simulator"
+CMAKE_SOURCE_DIR = "/home/yonathank/University/Advanced Programming/flight_simulator"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/yonathank/University/Advanced Programming/flight_simulator/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-buil
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"/Users/shacharmeir/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.5662.56/CLion.app/Contents/bin/cmake/mac/bin/cmake" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/yonathank/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.5233.103/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"/Users/shacharmeir/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.5662.56/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/yonathank/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.5233.103/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles" "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/yonathank/University/Advanced Programming/flight_simulator/cmake-build-debug/CMakeFiles" "/home/yonathank/University/Advanced Programming/flight_simulator/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/yonathank/University/Advanced Programming/flight_simulator/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -204,6 +204,33 @@ Lexer.cpp.s:
 	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Lexer.cpp.s
 .PHONY : Lexer.cpp.s
 
+OpenDataServerCommand.o: OpenDataServerCommand.cpp.o
+
+.PHONY : OpenDataServerCommand.o
+
+# target to build an object file
+OpenDataServerCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o
+.PHONY : OpenDataServerCommand.cpp.o
+
+OpenDataServerCommand.i: OpenDataServerCommand.cpp.i
+
+.PHONY : OpenDataServerCommand.i
+
+# target to preprocess a source file
+OpenDataServerCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.i
+.PHONY : OpenDataServerCommand.cpp.i
+
+OpenDataServerCommand.s: OpenDataServerCommand.cpp.s
+
+.PHONY : OpenDataServerCommand.s
+
+# target to generate assembly for a file
+OpenDataServerCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.s
+.PHONY : OpenDataServerCommand.cpp.s
+
 Parser.o: Parser.cpp.o
 
 .PHONY : Parser.o
@@ -258,6 +285,87 @@ Server.cpp.s:
 	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Server.cpp.s
 .PHONY : Server.cpp.s
 
+SharedData.o: SharedData.cpp.o
+
+.PHONY : SharedData.o
+
+# target to build an object file
+SharedData.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/SharedData.cpp.o
+.PHONY : SharedData.cpp.o
+
+SharedData.i: SharedData.cpp.i
+
+.PHONY : SharedData.i
+
+# target to preprocess a source file
+SharedData.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/SharedData.cpp.i
+.PHONY : SharedData.cpp.i
+
+SharedData.s: SharedData.cpp.s
+
+.PHONY : SharedData.s
+
+# target to generate assembly for a file
+SharedData.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/SharedData.cpp.s
+.PHONY : SharedData.cpp.s
+
+Symbol.o: Symbol.cpp.o
+
+.PHONY : Symbol.o
+
+# target to build an object file
+Symbol.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Symbol.cpp.o
+.PHONY : Symbol.cpp.o
+
+Symbol.i: Symbol.cpp.i
+
+.PHONY : Symbol.i
+
+# target to preprocess a source file
+Symbol.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Symbol.cpp.i
+.PHONY : Symbol.cpp.i
+
+Symbol.s: Symbol.cpp.s
+
+.PHONY : Symbol.s
+
+# target to generate assembly for a file
+Symbol.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Symbol.cpp.s
+.PHONY : Symbol.cpp.s
+
+SymbolTable.o: SymbolTable.cpp.o
+
+.PHONY : SymbolTable.o
+
+# target to build an object file
+SymbolTable.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/SymbolTable.cpp.o
+.PHONY : SymbolTable.cpp.o
+
+SymbolTable.i: SymbolTable.cpp.i
+
+.PHONY : SymbolTable.i
+
+# target to preprocess a source file
+SymbolTable.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/SymbolTable.cpp.i
+.PHONY : SymbolTable.cpp.i
+
+SymbolTable.s: SymbolTable.cpp.s
+
+.PHONY : SymbolTable.s
+
+# target to generate assembly for a file
+SymbolTable.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/SymbolTable.cpp.s
+.PHONY : SymbolTable.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -292,8 +400,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... Flight_Simulator"
+	@echo "... edit_cache"
 	@echo "... Client.o"
 	@echo "... Client.i"
 	@echo "... Client.s"
@@ -303,12 +411,24 @@ help:
 	@echo "... Lexer.o"
 	@echo "... Lexer.i"
 	@echo "... Lexer.s"
+	@echo "... OpenDataServerCommand.o"
+	@echo "... OpenDataServerCommand.i"
+	@echo "... OpenDataServerCommand.s"
 	@echo "... Parser.o"
 	@echo "... Parser.i"
 	@echo "... Parser.s"
 	@echo "... Server.o"
 	@echo "... Server.i"
 	@echo "... Server.s"
+	@echo "... SharedData.o"
+	@echo "... SharedData.i"
+	@echo "... SharedData.s"
+	@echo "... Symbol.o"
+	@echo "... Symbol.i"
+	@echo "... Symbol.s"
+	@echo "... SymbolTable.o"
+	@echo "... SymbolTable.i"
+	@echo "... SymbolTable.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

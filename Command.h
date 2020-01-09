@@ -6,7 +6,8 @@
 #define FLIGHT_SIMULATOR__COMMAND_H_
 #include "SharedData.h"
 class Command {
-virtual int execute(SharedData shared_data)=0;
+virtual void execute(SharedData shared_data)=0;
+virtual int numArg();
 };
 
 #endif //FLIGHT_SIMULATOR__COMMAND_H_
