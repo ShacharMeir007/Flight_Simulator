@@ -62,7 +62,6 @@ void Lexer::remove_redundant_signs(std::string& str){
 
 void Lexer::remove_quotation(std::string& str){
   std::string tmp;
-
   for (char& c:str) {
     if(c!= '"'){
       tmp += c;
@@ -100,14 +99,15 @@ std::vector<std::string> Lexer::split(const char token, std::string& str) {
 
 void Lexer::strip(std::string& str) {
   std::string tmp;
-  int i = 1;
-  for (char c: str) {
-    if (!(i==1 || i - str.length())){
-      tmp += c;
-    }
+  int i = 0;
+  int j = str.length() - 1;
+  while (str.substr(i,1)==" "){
     i++;
   }
-  str = tmp;
+  while (str.substr(j,1)==" "){
+    j--;
+  }
+  str = str.substr(i,j-i+1);
 }
 //vector methods
 void Lexer::printvector(std::vector<std::string> vector){
@@ -150,46 +150,39 @@ void Lexer::lex() {
   std::string line;
   int i = 1;
   while (!(line = readLine()).empty()){
-    //strip(line);
-    if(isOpenDataServer(line)){
-      std::cout<< i<<".open"<< std::endl;
-      hanleOpenDataServer(line);
-    } else if(isConnectControlClient(line)){
-      std::cout<< i<<".connect"<< std::endl;
-      hanleConnectControlClient(line);
-    } else if(isVar(line)){
-      std::cout<< i<<".var"<< std::endl;
-      hanleVar(line);
+    strip(line);
+    this->replace('('," ",line);
+    this->replace(')',"",line);
+    this->replace(','," ", line);
+    this->remove_redundant_signs(line);
+    std::vector<std::string> vector = split(' ', line);
+    if(isVar(line)){
+      handleVar(vector);
     } else if(isCondition(line)){
-      std::cout<< i<<".condition"<< std::endl;
-      hanleCondition(line);
+      handleCondition(line);
     } else if(isPrint(line)){
-      std::cout<< i<<".print"<< std::endl;
-      hanlePrint(line);
-    } else {
-      /*this->replace('('," ",line);
-      this->replace(')',"",line);
-      this->replace(','," ", line);
-      this->remove_redundant_signs(line);
-      std::vector<std::string>vector = split(' ', line);
-      this->copyCommands(vector);*/
+      handlePrint(line);
     }
+    this->copyCommands(vector);
     i++;
   }
   this->printvector(this->commends);
 }
-void Lexer::hanleOpenDataServer(std::string basic_string) {
+
+
+void Lexer::handleVar(std::vector<std::string>& basic_string) {
+  std::vector<std::string> elements;
+  for (std::string s: basic_string){
+    if (s!="sim"){
+      remove_quotation(s);
+      elements.push_back(s);
+    }
+  }
+  basic_string = elements;
+}
+void Lexer::handleCondition(std::string basic_string) {
 
 }
-void Lexer::hanleConnectControlClient(std::string basic_string) {
-
-}
-void Lexer::hanleVar(std::string basic_string) {
-
-}
-void Lexer::hanleCondition(std::string basic_string) {
-
-}
-void Lexer::hanlePrint(std::string basic_string) {
+void Lexer::handlePrint(std::string basic_string) {
 
 }
