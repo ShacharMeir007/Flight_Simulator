@@ -4,8 +4,6 @@
 
 
 #include "Lexer.h"
-#include "Expression/ex1.h"
-#include "Expression/Interpreter.h"
 //constructor
 Lexer::Lexer(const std::string& filename) {
   this->input_stream.open(filename);
@@ -112,7 +110,7 @@ void Lexer::strip(std::string& str) {
   str = str.substr(i,j-i+1);
 }
 //vector methods
-void Lexer::printvector(std::vector<std::string> vector){
+void Lexer::printVector(std::vector<std::string> vector){
   for(std::string s: vector){
     std::cout<<s<<std::endl;
   }
@@ -131,12 +129,7 @@ std::string Lexer::readLine() {
   std::getline(input_stream,line);
   return line;
 }
-bool isOpenDataServer(std::string& str) {
-  return str.substr(0, 14) == "openDataServer";
-}
-bool isConnectControlClient(std::string& str) {
-  return str.substr(0, 20) == "connectControlClient";
-}
+// checkers
 bool isVar(std::string& str) {
   return str.substr(0, 3) == "var";
 }
@@ -155,10 +148,20 @@ bool isCondition(std::string& str) {
   return str.substr(0, 5) == "while" || str.substr(0, 2) == "if";
 }
 
+bool isLogicOperator(std::string &str) {
+  const std::string operators[] = {">", "<", ">=", "<=","==", "!="};
+  for (const std::string& s: operators){
+    if (s == str){
+      return true;
+    }
+  }
+  return false;
+}
+
+
 //public methods
 void Lexer::lex() {
   std::string line;
-  int i = 1;
   while (!(line = readLine()).empty()){
     strip(line);
     this->replace('('," ",line);
@@ -170,19 +173,15 @@ void Lexer::lex() {
       handleVar(vector);
     } else if(isCondition(line)){
       handleCondition(vector);
-    } else if(isPrint(line)){
-      handlePrint(vector);
     } else if(isAssign(line)) {
       handleAssign(vector);
     }
     handleQuotation(vector);
     this->copyCommands(vector);
-    i++;
   }
-  this->printvector(this->commends);
+  this->printVector(this->commends);
 }
-
-
+//handle functions
 void Lexer::handleVar(std::vector<std::string>& basic_string) {
   std::vector<std::string> elements;
   for (std::string s: basic_string){
@@ -214,9 +213,6 @@ void Lexer::handleCondition(std::vector<std::string>& vector) {
   newVec.push_back(vector[i]);
   vector = newVec;
 }
-void Lexer::handlePrint(std::vector<std::string>& vector) {
-
-}
 void Lexer::handleQuotation(std::vector<std::string>& vector) {
   for (std::string& s: vector){
     remove_quotation(s);
@@ -235,13 +231,4 @@ void Lexer::handleAssign(std::vector<std::string> &vector) {
   }
   newVec.push_back(expressionString);
   vector = newVec;
-}
-bool Lexer::isLogicOperator(std::string &str) {
-  const std::string operators[] = {">", "<", ">=", "<=","==", "!="};
-  for (const std::string& s: operators){
-    if (s == str){
-      return true;
-    }
-  }
-  return false;
 }

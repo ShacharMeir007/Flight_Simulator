@@ -22,7 +22,7 @@ class Lexer {
   std::vector<std::string> split(const char token, std::string &str);
   //vector methods
   void copyCommands(const std::vector<std::string>& vector);
-  void printvector(std::vector<std::string> vector);
+  void printVector(std::vector<std::string> vector);
   //file methods
   std::string readLine();
   //public methods
@@ -35,10 +35,8 @@ class Lexer {
   void strip(std::string &str);
   void handleVar(std::vector<std::string>& basic_string);
   void handleCondition(std::vector<std::string>& vector);
-  void handlePrint(std::vector<std::string>& vector);
   void handleQuotation(std::vector<std::string>& vector);
   void handleAssign(std::vector<std::string> &vector);
-  bool isLogicOperator(std::string &str);
 };
 
 #endif //FLIGHT_SIMULATOR__LEXER_H_
