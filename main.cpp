@@ -5,8 +5,14 @@ int main(int argc, char* argv[]) {
     return 1;
   }
   Lexer lexer(argv[1]);
-  auto commmands = lexer.lex();
-  Parser parser = Parser(&commmands);
-  parser.parse();
+  std::vector<std::string> commands = lexer.lex();
+  Parser parser = Parser(&commands);
+  try {
+    parser.parse();
+  } catch (char const* exception){
+    std::cout<<exception<<std::endl;
+    return 1;
+  }
+
   return 0;
 }

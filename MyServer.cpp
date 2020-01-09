@@ -61,6 +61,6 @@ void runDataServer(int port)
 }
 void openDataServer(int port){
   std::thread thread1(runDataServer, port);
-  thread1.join();
+  thread1.detach();
 }
 #endif //FLIGHT_SIMULATOR__MYSERVER_H_

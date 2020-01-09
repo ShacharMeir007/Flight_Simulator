@@ -4,8 +4,18 @@
 
 #include "CommandMap.h"
 Command* CommandMap::getCommand(std::string s) {
-  return map_.find(s)->second;
+  try {
+    Command* command = map_.at(s);
+    return command;
+  } catch (std::out_of_range& ofRange){
+    std::cout<<"couldn't find command: "<<s<<std::endl;
+    return nullptr;
+  }
+
+
 }
 CommandMap::CommandMap() {
   map_["openDataServer"] = new OpenDataServerCommand();
+  map_["Print"] = new PrintCommand();
+  map_["Sleep"] = new SleepCommand();
 }

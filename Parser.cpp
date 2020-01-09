@@ -13,6 +13,10 @@ void Parser::parse() {
   std::vector<std::string> *args;
   while (index < size) {
     c = cm.getCommand(string_commands_->at(index));
+    if (!c){
+      std::string invalid_command = string_commands_->at(index);
+      throw "don't recognize command";
+    }
     numArgs = c->numArg();
     if (numArgs >= 0) {
       auto first = string_commands_->begin() + index + 1;

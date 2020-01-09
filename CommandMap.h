@@ -7,6 +7,8 @@
 #include "Command.h"
 #include <unordered_map>
 #include "OpenDataServerCommand.h"
+#include "SleepCommand.h"
+#include "PrintCommand.h"
 class CommandMap {
   std::unordered_map<std::string, Command*> map_;
  public:
