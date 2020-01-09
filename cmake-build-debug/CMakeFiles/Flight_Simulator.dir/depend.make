@@ -33,5 +33,7 @@ CMakeFiles/Flight_Simulator.dir/SymbolTable.cpp.o: ../SymbolTable.cpp
 CMakeFiles/Flight_Simulator.dir/SymbolTable.cpp.o: ../SymbolTable.h
 
 CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../Lexer.h
+CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../Parser.h
+CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../SharedData.h
 CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../main.cpp
 

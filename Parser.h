@@ -10,9 +10,10 @@
 class Parser {
  private:
   std::vector<std::string> string_commands_;
-  SharedData shared_data_;
  public:
+  static SharedData shared_data_;
   void parse();
+  Parser();
 };
 
 #endif //FLIGHT_SIMULATOR__PARSER_H_

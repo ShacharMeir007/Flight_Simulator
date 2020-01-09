@@ -10,8 +10,15 @@
 //Every time you need to share data between threads you'll use
 //this class.
 class SharedData {
-  std::vector<std::string>& vars_right_Bind;
-  std::vector<std::string>& vars_left_Bind;
+  std::vector<std::string>* vars_right_Bind = nullptr;
+  std::vector<std::string>* vars_left_Bind = nullptr;
+ public:
+  SharedData();
+  virtual ~SharedData();
+  std::vector<std::string> *GetVarsRightBind() const;
+  void SetVarsRightBind(std::vector<std::string> *new_vars_right_bind);
+  std::vector<std::string> *GetVarsLeftBind() const;
+  void SetVarsLeftBind(std::vector<std::string> *new_vars_left_bind);
 };
 
 #endif //FLIGHT_SIMULATOR__SHAREDDATA_H_

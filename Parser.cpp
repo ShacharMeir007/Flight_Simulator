@@ -6,3 +6,6 @@
 void Parser::parse() {
 
 }
+Parser::Parser() {
+
+}

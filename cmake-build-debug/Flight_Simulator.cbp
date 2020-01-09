@@ -8,135 +8,133 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/yonathank/University/Advanced Programming/flight_simulator/cmake-build-debug"/>
+				<Option working_dir="/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/yonathank/University/Advanced Programming/flight_simulator/cmake-build-debug"/>
+				<Option working_dir="/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Flight_Simulator">
-				<Option output="/home/yonathank/University/Advanced Programming/flight_simulator/cmake-build-debug/Flight_Simulator" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/yonathank/University/Advanced Programming/flight_simulator/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 Flight_Simulator"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Flight_Simulator/fast">
-				<Option output="/home/yonathank/University/Advanced Programming/flight_simulator/cmake-build-debug/Flight_Simulator" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/yonathank/University/Advanced Programming/flight_simulator/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/../../../../include/c++/9.2.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.2.0/include-fixed"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 Flight_Simulator/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/yonathank/University/Advanced Programming/flight_simulator/cmake-build-debug"/>
+				<Option working_dir="/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/yonathank/University/Advanced\ Programming/flight_simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Flight_Simulator">
+				<Option output="/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/Flight_Simulator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 Flight_Simulator"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Flight_Simulator/fast">
+				<Option output="/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/Flight_Simulator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 Flight_Simulator/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/shacharmeir/CLionProjects/Flight\ Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/BindDirection.h">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/BindDirection.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/Client.cpp">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Client.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/Command.cpp">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Command.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/Command.h">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Command.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/Lexer.cpp">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Lexer.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/Lexer.h">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Lexer.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/OpenDataServerCommand.cpp">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/OpenDataServerCommand.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/OpenDataServerCommand.h">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/OpenDataServerCommand.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/Parser.cpp">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Parser.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/Parser.h">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Parser.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/Server.cpp">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Server.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/SharedData.cpp">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/SharedData.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/SharedData.h">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/SharedData.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/Symbol.cpp">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Symbol.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/Symbol.h">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Symbol.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/SymbolTable.cpp">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/SymbolTable.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/SymbolTable.h">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/SymbolTable.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/main.cpp">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/main.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/home/yonathank/University/Advanced Programming/flight_simulator/CMakeLists.txt">
+		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
