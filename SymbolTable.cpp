@@ -11,3 +11,7 @@ Symbol SymbolTable::get(std::string &str) {
     throw ofRange;
   }
 }
+void SymbolTable::add(std::string & name, Symbol symbol) {
+  std::pair<std::string, Symbol> pair(name, symbol);
+  this->table.insert(pair);
+}

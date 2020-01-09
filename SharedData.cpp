@@ -21,3 +21,9 @@ std::vector<std::string> *SharedData::GetVarsLeftBind() const {
 void SharedData::SetVarsLeftBind(std::vector<std::string> *new_vars_left_bind) {
   vars_left_Bind = new_vars_left_bind;
 }
+SymbolTable *SharedData::GetSymbolTable() const {
+  return symbol_table_;
+}
+void SharedData::SetSymbolTable(SymbolTable *new_symbol_table) {
+  symbol_table_ = new_symbol_table;
+}

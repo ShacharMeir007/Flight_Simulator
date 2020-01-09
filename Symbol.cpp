@@ -15,3 +15,4 @@ const std::string &Symbol::GetSim() const {
 void Symbol::SetSim(const std::string &newSim) {
   Symbol::sim = newSim;
 }
+Symbol::Symbol(double value, const std::string &sim) : value(value), sim(sim) {}

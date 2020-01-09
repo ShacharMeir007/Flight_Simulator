@@ -8,6 +8,7 @@
 #include <string>
 class Symbol {
  public:
+  Symbol(double value, const std::string &sim);
   double GetValue() const;
   void SetValue(double);
   const std::string &GetSim() const;

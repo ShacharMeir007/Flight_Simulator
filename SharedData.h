@@ -6,12 +6,17 @@
 #define FLIGHT_SIMULATOR__SHAREDDATA_H_
 #include <vector>
 #include <string>
+#include "SymbolTable.h"
 //This class is for shared data the thread might need.
 //Every time you need to share data between threads you'll use
 //this class.
 class SharedData {
   std::vector<std::string>* vars_right_Bind = nullptr;
   std::vector<std::string>* vars_left_Bind = nullptr;
+  SymbolTable* symbol_table_ = nullptr;
+ public:
+  SymbolTable *GetSymbolTable() const;
+  void SetSymbolTable(SymbolTable *new_symbol_table);
  public:
   SharedData();
   virtual ~SharedData();
