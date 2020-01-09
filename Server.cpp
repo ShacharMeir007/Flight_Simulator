@@ -9,9 +9,9 @@
 #include <unistd.h>
 #include <netinet/in.h>
 #include <thread>
-
+#include "SharedData.h"
 #define PORT 5400
-void runDataServer()
+void runDataServer(SharedData shared_data)
 {
 
   //create socket
@@ -65,7 +65,7 @@ void runDataServer()
   std::cout<<"Hello message sent\n"<<std::endl;*/
 
 }
-void openDataServer(){
-  std::thread thread1(runDataServer);
+void openDataServer(SharedData shared_data){
+  std::thread thread1(runDataServer, shared_data);
   thread1.join();
 }

@@ -3,6 +3,6 @@
 //
 
 #include "OpenDataServerCommand.h"
-int OpenDataServerCommand::execute() {
+int OpenDataServerCommand::execute(SharedData shared_data) {
   return 0;
 }
