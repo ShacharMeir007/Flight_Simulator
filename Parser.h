@@ -7,13 +7,14 @@
 #include <vector>
 #include <string>
 #include "SharedData.h"
+#include "CommandMap.h"
 class Parser {
  private:
-  std::vector<std::string> string_commands_;
+  std::vector<std::string> *string_commands_;
  public:
   static SharedData shared_data_;
   void parse();
-  Parser();
+  Parser(std::vector<std::string> *stringCommands);
 };
 
 #endif //FLIGHT_SIMULATOR__PARSER_H_

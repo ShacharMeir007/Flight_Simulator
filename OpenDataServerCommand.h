@@ -5,6 +5,7 @@
 #ifndef FLIGHT_SIMULATOR__OPENDATASERVERCOMMAND_H_
 #define FLIGHT_SIMULATOR__OPENDATASERVERCOMMAND_H_
 #include "Command.h"
+
 class OpenDataServerCommand: public Command {
   void execute(std::vector<std::string>& args) override;
   int numArg() override;

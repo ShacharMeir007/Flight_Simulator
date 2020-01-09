@@ -5,8 +5,8 @@ int main(int argc, char* argv[]) {
     return 1;
   }
   Lexer lexer(argv[1]);
-  lexer.lex();
-  Parser parser;
+  auto commmands = lexer.lex();
+  Parser parser = Parser(&commmands);
   parser.parse();
   return 0;
 }

@@ -7,8 +7,9 @@
 #include <vector>
 #include <string>
 class Command {
-virtual void execute(std::vector<std::string>& args)=0;
-virtual int numArg()=0;
+ public:
+virtual void execute(std::vector<std::string>& args) = 0;
+virtual int numArg() = 0;
 };
 
 #endif //FLIGHT_SIMULATOR__COMMAND_H_
