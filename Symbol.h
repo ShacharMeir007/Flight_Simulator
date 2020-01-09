@@ -9,9 +9,9 @@
 class Symbol {
  public:
   double GetValue() const;
-  void SetValue(double value);
+  void SetValue(double);
   const std::string &GetSim() const;
-  void SetSim(const std::string &sim);
+  void SetSim(const std::string &);
  private:
   double value;
   std::string sim;

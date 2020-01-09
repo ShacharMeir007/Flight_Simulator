@@ -6,12 +6,12 @@
 double Symbol::GetValue() const {
   return value;
 }
-void Symbol::SetValue(double value) {
-  Symbol::value = value;
+void Symbol::SetValue(double newValue) {
+  Symbol::value = newValue;
 }
 const std::string &Symbol::GetSim() const {
   return sim;
 }
-void Symbol::SetSim(const std::string &sim) {
-  Symbol::sim = sim;
+void Symbol::SetSim(const std::string &newSim) {
+  Symbol::sim = newSim;
 }
