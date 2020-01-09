@@ -4,8 +4,10 @@
 
 #ifndef FLIGHT_SIMULATOR__COMMAND_H_
 #define FLIGHT_SIMULATOR__COMMAND_H_
+#include <vector>
+#include <string>
 class Command {
-virtual void execute()=0;
+virtual void execute(std::vector<std::string>& args)=0;
 virtual int numArg()=0;
 };
 

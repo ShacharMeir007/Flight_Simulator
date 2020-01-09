@@ -1,7 +1,8 @@
 //
 // Created by shachar Meir on 06/01/2020.
 //
-
+#ifndef FLIGHT_SIMULATOR__SERVER_H_
+#define FLIGHT_SIMULATOR__SERVER_H_
 // Server side C/C++ program to demonstrate Socket programming
 #include <sys/socket.h>
 #include <string>
@@ -9,9 +10,8 @@
 #include <unistd.h>
 #include <netinet/in.h>
 #include <thread>
-#include "SharedData.h"
-#define PORT 5400
-void runDataServer(SharedData shared_data)
+#include "Parser.h"
+void runDataServer(int port)
 {
 
   //create socket
@@ -26,7 +26,7 @@ void runDataServer(SharedData shared_data)
   sockaddr_in address; //in means IP4
   address.sin_family = AF_INET;
   address.sin_addr.s_addr = INADDR_ANY; //give me any IP allocated for my machine
-  address.sin_port = htons(PORT);
+  address.sin_port = htons(port);
   //we need to convert our number
   // to a number that the network understands.
 
@@ -41,7 +41,7 @@ void runDataServer(SharedData shared_data)
   } else{
     std::cout<<"Server is now listening ..."<<std::endl;
   }
-
+  
   // accepting a client
   int client_socket = accept(socketfd, (struct sockaddr *)&address,
                              (socklen_t*)&address);
@@ -65,7 +65,8 @@ void runDataServer(SharedData shared_data)
   std::cout<<"Hello message sent\n"<<std::endl;*/
 
 }
-void openDataServer(SharedData shared_data){
-  std::thread thread1(runDataServer, shared_data);
+void openDataServer(int port){
+  std::thread thread1(runDataServer, port);
   thread1.join();
 }
+#endif //FLIGHT_SIMULATOR__SERVER_H_
