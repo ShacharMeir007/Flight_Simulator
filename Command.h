@@ -6,7 +6,10 @@
 #define FLIGHT_SIMULATOR__COMMAND_H_
 #include <vector>
 #include <string>
+#include "iostream"
 #include "SharedData.h"
+#include "Expression/ex1.h"
+#include "Expression/Interpreter.h"
 class Command {
  protected:
   SharedData* shared_data;

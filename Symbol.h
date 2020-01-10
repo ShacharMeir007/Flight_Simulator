@@ -9,7 +9,7 @@
 class Symbol {
  public:
   Symbol(double value, const std::string &sim);
-  double GetValue() const;
+  double GetValue() ;
   void SetValue(double);
   const std::string &GetSim() const;
   void SetSim(const std::string &);

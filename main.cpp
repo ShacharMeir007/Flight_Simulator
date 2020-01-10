@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
   Parser parser = Parser(&commands);
   try {
     parser.parse(shared_data);
-    //Parser::shared_data_.GetVarsLeftBind();
+    //Parser::shared_data_.safe_getVarsLeftBind();
   } catch (char const* exception){
     std::cout<<exception<<std::endl;
     return 1;

@@ -10,68 +10,68 @@
 
 Expression *Interpreter::interpret(const char * in) {
 
-    string input(in);
-    queue<string> postfix = shunting_yard(input);
-    stack<Expression*> exp_stack;
-    //cout<<endl;
-    while (!postfix.empty()){
-      string fr = postfix.front();
-      //cout<<"pulled :"<<fr<<endl;
-      if (isNumber(fr)){
-        exp_stack.push(new Value(std::stod(fr)));
-      } else if(is_operator(fr)){
-        Expression *rExp;
-        if (!exp_stack.empty()) {
-          rExp = exp_stack.top();
-          exp_stack.pop();
-        } else {
-          throw "illegal math expression";
-        }
-        Expression* lExp;
-        if (!exp_stack.empty()) {
-          lExp = exp_stack.top();
-          exp_stack.pop();
-        } else{
-          throw "illegal math expression";
-        }
-        exp_stack.push(ActivateOper(lExp, rExp, fr));
-      } else if (is_Unary_operator(fr)) {
-        Expression* exp = exp_stack.top();
+  string input(in);
+  queue<string> postfix = shunting_yard(input);
+  stack<Expression*> exp_stack;
+  //cout<<endl;
+  while (!postfix.empty()){
+    string fr = postfix.front();
+    //cout<<"pulled :"<<fr<<endl;
+    if (isNumber(fr)){
+      exp_stack.push(new Value(std::stod(fr)));
+    } else if(is_operator(fr)){
+      Expression *rExp;
+      if (!exp_stack.empty()) {
+        rExp = exp_stack.top();
         exp_stack.pop();
-        exp_stack.push(ActivateUnaryOper(exp,fr));
+      } else {
+        throw "illegal math expression";
       }
-      postfix.pop();
+      Expression* lExp;
+      if (!exp_stack.empty()) {
+        lExp = exp_stack.top();
+        exp_stack.pop();
+      } else{
+        throw "illegal math expression";
+      }
+      exp_stack.push(ActivateOper(lExp, rExp, fr));
+    } else if (is_Unary_operator(fr)) {
+      Expression* exp = exp_stack.top();
+      exp_stack.pop();
+      exp_stack.push(ActivateUnaryOper(exp,fr));
     }
-    return exp_stack.top();
+    postfix.pop();
+  }
+  return exp_stack.top();
 }
 
 void Interpreter::setVariables(const char * input) {
-    string s(input);
-    bool isname = true;
-    string name;
-    string val;
-    for(char& c : s) {
-      if (isname) {
-        if(c != '=') {
-          name+=c;
-        } else{
-          isname = false;
-        }
-      } else {
-        if (c != ';' && c != '\0') {
-          val +=c;
-        } else{
-          this->addToVarMap(name, val);
-          //i
-          isname = true;
-          name = "";
-          val = "";
-        }
+  string s(input);
+  bool isname = true;
+  string name;
+  string val;
+  for(char& c : s) {
+    if (isname) {
+      if(c != '=') {
+        name+=c;
+      } else{
+        isname = false;
+      }
+    } else {
+      if (c != ';' && c != '\0') {
+        val +=c;
+      } else{
+        this->addToVarMap(name, val);
+        //i
+        isname = true;
+        name = "";
+        val = "";
       }
     }
-    if (!val.empty()) {
-      this->addToVarMap(name, val);
-    }
+  }
+  if (!val.empty()) {
+    this->addToVarMap(name, val);
+  }
 }
 
 void Interpreter::addToVarMap(const string& name, const string& val) {
@@ -139,7 +139,7 @@ queue<string> Interpreter::shunting_yard(const string& input) {
       } else if(number.empty() && !last_operator){
 
       } else {
-          throw "this is not recognized";
+        throw "this is not recognized";
       }
       //checking if the operator is unary
       is_unary = is_unary&&!last_operator;
@@ -187,7 +187,7 @@ queue<string> Interpreter::shunting_yard(const string& input) {
       }
 
     } else {
-        number+=c;
+      number+=c;
     }
   }
   // operating on last number
@@ -197,15 +197,15 @@ queue<string> Interpreter::shunting_yard(const string& input) {
       //cout<<"pushed :"<<number<<endl;
       number ="";
     } else if(is_valid_name(number)){
-        if(this->varMap.find(number) != this->varMap.end()){
-          numbers_queue.push(std::to_string(this->varMap[number]));
-          number ="";
-        } else {
-          throw "this is not recognized";
-
-        }
-    } else {
+      if(this->varMap.find(number) != this->varMap.end()){
+        numbers_queue.push(std::to_string(this->varMap[number]));
+        number ="";
+      } else {
         throw "this is not recognized";
+
+      }
+    } else {
+      throw "this is not recognized";
     }
   }
   while (!operators_stack.empty()){
@@ -219,9 +219,9 @@ bool Interpreter::is_operator(const string& c) {
   queue <string> numbers_queue;
   stack <char> operators_stack;
   for(const string& op: operators){
-      if (c == op){
-        return true;
-      }
+    if (c == op){
+      return true;
+    }
   }
   return false;
 }
@@ -236,7 +236,7 @@ Expression *Interpreter::ActivateOper(Expression *left_expression, Expression *r
     return new Div(left_expression, right_expression);
   }
   else {
-      throw "not an operator";
+    throw "not an operator";
   }
 }
 int Interpreter::precedence(const char & c) {

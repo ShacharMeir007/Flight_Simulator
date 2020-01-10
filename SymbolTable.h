@@ -9,7 +9,7 @@
 #include "Symbol.h"
 class SymbolTable {
  public:
-  Symbol get(std::string& str);
+  Symbol& get(std::string& str);
   void add (std::string&, Symbol);
  private:
   std::map<std::string, Symbol> table;

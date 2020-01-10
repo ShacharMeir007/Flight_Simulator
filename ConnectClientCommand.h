@@ -1,0 +1,12 @@
+//
+// Created by shachar Meir on 10/01/2020.
+//
+
+#ifndef FLIGHT_SIMULATOR__CONNECTCLIENTCOMMAND_H_
+#define FLIGHT_SIMULATOR__CONNECTCLIENTCOMMAND_H_
+
+class ConnectClientCommand {
+
+};
+
+#endif //FLIGHT_SIMULATOR__CONNECTCLIENTCOMMAND_H_

@@ -18,4 +18,5 @@ CommandMap::CommandMap(SharedData* data) {
   map_["Print"] = new PrintCommand(data);
   map_["Sleep"] = new SleepCommand(data);
   map_["var"] = new VarCommand(data);
+  map_["="] = new AssignCommand(data);
 }

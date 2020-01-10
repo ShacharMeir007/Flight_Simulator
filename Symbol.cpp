@@ -3,7 +3,7 @@
 //
 
 #include "Symbol.h"
-double Symbol::GetValue() const {
+double Symbol::GetValue()  {
   return value;
 }
 void Symbol::SetValue(double newValue) {

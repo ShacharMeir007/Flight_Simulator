@@ -1,8 +1,7 @@
 //
 // Created by shachar Meir on 06/01/2020.
 //
-#ifndef FLIGHT_SIMULATOR__MYSERVER_H_
-#define FLIGHT_SIMULATOR__SERVER_H_
+
 // Server side C/C++ program to demonstrate Socket programming
 #include "MyServer.h"
 void runDataServer(int port, SharedData* data)
@@ -25,7 +24,9 @@ void runDataServer(int port, SharedData* data)
   // to a number that the network understands.
 
   //the actual bind command
-  if (bind(socketfd, (struct sockaddr *) &address, sizeof(address)) == -1) {
+
+
+  if (::bind(socketfd, (struct sockaddr *) &address, sizeof(address)) == -1) {
     std::cerr<<"Could not bind the socket to an IP"<<std::endl;
   }
 
@@ -63,4 +64,3 @@ void openDataServer(int port, SharedData* shared_data){
   std::thread thread1(runDataServer, port, shared_data);
   thread1.join();
 }
-#endif //FLIGHT_SIMULATOR__MYSERVER_H_
