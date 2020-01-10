@@ -58,7 +58,7 @@ std::vector<std::string> Lexer::lex() {
     handleQuotation(vector);
     this->copyCommands(vector);
   }
-  this->printVector(this->commends);
+  //this->printVector(this->commends);
   return this->commends;
 }
 //handle functions

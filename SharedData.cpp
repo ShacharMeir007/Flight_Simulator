@@ -3,6 +3,7 @@
 //
 
 #include "SharedData.h"
+//todo add mutex lock on changing values
 SharedData::SharedData() {
   this->vars_left_Bind = new std::vector<std::string>();
   this->vars_right_Bind = new std::vector<std::string>();
@@ -26,6 +27,8 @@ void SharedData::SetVarsLeftBind(std::vector<std::string> *new_vars_left_bind) {
 SymbolTable *SharedData::GetSymbolTable() const {
   return symbol_table_;
 }
-void SharedData::SetSymbolTable(SymbolTable *new_symbol_table) {
-  symbol_table_ = new_symbol_table;
+void SharedData::changeValue(std::string & name, double value) {
+  mutex_.lock();
+  this->symbol_table_->get(name).SetValue(value);
+  mutex_.unlock();
 }
