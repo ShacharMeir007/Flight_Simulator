@@ -123,32 +123,32 @@ Flight_Simulator/fast:
 	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/build
 .PHONY : Flight_Simulator/fast
 
-Client.o: Client.cpp.o
+AssignCommand.o: AssignCommand.cpp.o
 
-.PHONY : Client.o
+.PHONY : AssignCommand.o
 
 # target to build an object file
-Client.cpp.o:
-	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Client.cpp.o
-.PHONY : Client.cpp.o
+AssignCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/AssignCommand.cpp.o
+.PHONY : AssignCommand.cpp.o
 
-Client.i: Client.cpp.i
+AssignCommand.i: AssignCommand.cpp.i
 
-.PHONY : Client.i
+.PHONY : AssignCommand.i
 
 # target to preprocess a source file
-Client.cpp.i:
-	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Client.cpp.i
-.PHONY : Client.cpp.i
+AssignCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/AssignCommand.cpp.i
+.PHONY : AssignCommand.cpp.i
 
-Client.s: Client.cpp.s
+AssignCommand.s: AssignCommand.cpp.s
 
-.PHONY : Client.s
+.PHONY : AssignCommand.s
 
 # target to generate assembly for a file
-Client.cpp.s:
-	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Client.cpp.s
-.PHONY : Client.cpp.s
+AssignCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/AssignCommand.cpp.s
+.PHONY : AssignCommand.cpp.s
 
 Command.o: Command.cpp.o
 
@@ -177,6 +177,168 @@ Command.cpp.s:
 	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Command.cpp.s
 .PHONY : Command.cpp.s
 
+CommandMap.o: CommandMap.cpp.o
+
+.PHONY : CommandMap.o
+
+# target to build an object file
+CommandMap.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o
+.PHONY : CommandMap.cpp.o
+
+CommandMap.i: CommandMap.cpp.i
+
+.PHONY : CommandMap.i
+
+# target to preprocess a source file
+CommandMap.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.i
+.PHONY : CommandMap.cpp.i
+
+CommandMap.s: CommandMap.cpp.s
+
+.PHONY : CommandMap.s
+
+# target to generate assembly for a file
+CommandMap.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.s
+.PHONY : CommandMap.cpp.s
+
+ConnectClientCommand.o: ConnectClientCommand.cpp.o
+
+.PHONY : ConnectClientCommand.o
+
+# target to build an object file
+ConnectClientCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/ConnectClientCommand.cpp.o
+.PHONY : ConnectClientCommand.cpp.o
+
+ConnectClientCommand.i: ConnectClientCommand.cpp.i
+
+.PHONY : ConnectClientCommand.i
+
+# target to preprocess a source file
+ConnectClientCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/ConnectClientCommand.cpp.i
+.PHONY : ConnectClientCommand.cpp.i
+
+ConnectClientCommand.s: ConnectClientCommand.cpp.s
+
+.PHONY : ConnectClientCommand.s
+
+# target to generate assembly for a file
+ConnectClientCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/ConnectClientCommand.cpp.s
+.PHONY : ConnectClientCommand.cpp.s
+
+Expression/Expression.o: Expression/Expression.cpp.o
+
+.PHONY : Expression/Expression.o
+
+# target to build an object file
+Expression/Expression.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Expression/Expression.cpp.o
+.PHONY : Expression/Expression.cpp.o
+
+Expression/Expression.i: Expression/Expression.cpp.i
+
+.PHONY : Expression/Expression.i
+
+# target to preprocess a source file
+Expression/Expression.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Expression/Expression.cpp.i
+.PHONY : Expression/Expression.cpp.i
+
+Expression/Expression.s: Expression/Expression.cpp.s
+
+.PHONY : Expression/Expression.s
+
+# target to generate assembly for a file
+Expression/Expression.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Expression/Expression.cpp.s
+.PHONY : Expression/Expression.cpp.s
+
+Expression/Interpreter.o: Expression/Interpreter.cpp.o
+
+.PHONY : Expression/Interpreter.o
+
+# target to build an object file
+Expression/Interpreter.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Expression/Interpreter.cpp.o
+.PHONY : Expression/Interpreter.cpp.o
+
+Expression/Interpreter.i: Expression/Interpreter.cpp.i
+
+.PHONY : Expression/Interpreter.i
+
+# target to preprocess a source file
+Expression/Interpreter.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Expression/Interpreter.cpp.i
+.PHONY : Expression/Interpreter.cpp.i
+
+Expression/Interpreter.s: Expression/Interpreter.cpp.s
+
+.PHONY : Expression/Interpreter.s
+
+# target to generate assembly for a file
+Expression/Interpreter.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Expression/Interpreter.cpp.s
+.PHONY : Expression/Interpreter.cpp.s
+
+Expression/ex1.o: Expression/ex1.cpp.o
+
+.PHONY : Expression/ex1.o
+
+# target to build an object file
+Expression/ex1.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Expression/ex1.cpp.o
+.PHONY : Expression/ex1.cpp.o
+
+Expression/ex1.i: Expression/ex1.cpp.i
+
+.PHONY : Expression/ex1.i
+
+# target to preprocess a source file
+Expression/ex1.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Expression/ex1.cpp.i
+.PHONY : Expression/ex1.cpp.i
+
+Expression/ex1.s: Expression/ex1.cpp.s
+
+.PHONY : Expression/ex1.s
+
+# target to generate assembly for a file
+Expression/ex1.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Expression/ex1.cpp.s
+.PHONY : Expression/ex1.cpp.s
+
+IfWhileCommand.o: IfWhileCommand.cpp.o
+
+.PHONY : IfWhileCommand.o
+
+# target to build an object file
+IfWhileCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/IfWhileCommand.cpp.o
+.PHONY : IfWhileCommand.cpp.o
+
+IfWhileCommand.i: IfWhileCommand.cpp.i
+
+.PHONY : IfWhileCommand.i
+
+# target to preprocess a source file
+IfWhileCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/IfWhileCommand.cpp.i
+.PHONY : IfWhileCommand.cpp.i
+
+IfWhileCommand.s: IfWhileCommand.cpp.s
+
+.PHONY : IfWhileCommand.s
+
+# target to generate assembly for a file
+IfWhileCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/IfWhileCommand.cpp.s
+.PHONY : IfWhileCommand.cpp.s
+
 Lexer.o: Lexer.cpp.o
 
 .PHONY : Lexer.o
@@ -203,6 +365,33 @@ Lexer.s: Lexer.cpp.s
 Lexer.cpp.s:
 	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/Lexer.cpp.s
 .PHONY : Lexer.cpp.s
+
+MyClient.o: MyClient.cpp.o
+
+.PHONY : MyClient.o
+
+# target to build an object file
+MyClient.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/MyClient.cpp.o
+.PHONY : MyClient.cpp.o
+
+MyClient.i: MyClient.cpp.i
+
+.PHONY : MyClient.i
+
+# target to preprocess a source file
+MyClient.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/MyClient.cpp.i
+.PHONY : MyClient.cpp.i
+
+MyClient.s: MyClient.cpp.s
+
+.PHONY : MyClient.s
+
+# target to generate assembly for a file
+MyClient.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/MyClient.cpp.s
+.PHONY : MyClient.cpp.s
 
 MyServer.o: MyServer.cpp.o
 
@@ -447,6 +636,33 @@ TextFunctions.cpp.s:
 	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/TextFunctions.cpp.s
 .PHONY : TextFunctions.cpp.s
 
+ThreadLock.o: ThreadLock.cpp.o
+
+.PHONY : ThreadLock.o
+
+# target to build an object file
+ThreadLock.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/ThreadLock.cpp.o
+.PHONY : ThreadLock.cpp.o
+
+ThreadLock.i: ThreadLock.cpp.i
+
+.PHONY : ThreadLock.i
+
+# target to preprocess a source file
+ThreadLock.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/ThreadLock.cpp.i
+.PHONY : ThreadLock.cpp.i
+
+ThreadLock.s: ThreadLock.cpp.s
+
+.PHONY : ThreadLock.s
+
+# target to generate assembly for a file
+ThreadLock.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/ThreadLock.cpp.s
+.PHONY : ThreadLock.cpp.s
+
 VarCommand.o: VarCommand.cpp.o
 
 .PHONY : VarCommand.o
@@ -510,15 +726,36 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Flight_Simulator"
-	@echo "... Client.o"
-	@echo "... Client.i"
-	@echo "... Client.s"
+	@echo "... AssignCommand.o"
+	@echo "... AssignCommand.i"
+	@echo "... AssignCommand.s"
 	@echo "... Command.o"
 	@echo "... Command.i"
 	@echo "... Command.s"
+	@echo "... CommandMap.o"
+	@echo "... CommandMap.i"
+	@echo "... CommandMap.s"
+	@echo "... ConnectClientCommand.o"
+	@echo "... ConnectClientCommand.i"
+	@echo "... ConnectClientCommand.s"
+	@echo "... Expression/Expression.o"
+	@echo "... Expression/Expression.i"
+	@echo "... Expression/Expression.s"
+	@echo "... Expression/Interpreter.o"
+	@echo "... Expression/Interpreter.i"
+	@echo "... Expression/Interpreter.s"
+	@echo "... Expression/ex1.o"
+	@echo "... Expression/ex1.i"
+	@echo "... Expression/ex1.s"
+	@echo "... IfWhileCommand.o"
+	@echo "... IfWhileCommand.i"
+	@echo "... IfWhileCommand.s"
 	@echo "... Lexer.o"
 	@echo "... Lexer.i"
 	@echo "... Lexer.s"
+	@echo "... MyClient.o"
+	@echo "... MyClient.i"
+	@echo "... MyClient.s"
 	@echo "... MyServer.o"
 	@echo "... MyServer.i"
 	@echo "... MyServer.s"
@@ -546,6 +783,9 @@ help:
 	@echo "... TextFunctions.o"
 	@echo "... TextFunctions.i"
 	@echo "... TextFunctions.s"
+	@echo "... ThreadLock.o"
+	@echo "... ThreadLock.i"
+	@echo "... ThreadLock.s"
 	@echo "... VarCommand.o"
 	@echo "... VarCommand.i"
 	@echo "... VarCommand.s"

@@ -6,7 +6,7 @@
 #include "MyServer.h"
 void runDataServer(int port, SharedData* data)
 {
-
+  data->harsh_lock();
   //create socket
   int socketfd = socket(AF_INET, SOCK_STREAM, 0);
   if (socketfd == -1) {
@@ -47,7 +47,7 @@ void runDataServer(int port, SharedData* data)
   }
 
   close(socketfd); //closing the listening socket
-
+  data->harsh_release();
   //reading from client
   while (true) {
     char buffer[1024] = {0};
@@ -62,5 +62,5 @@ void runDataServer(int port, SharedData* data)
 }
 void openDataServer(int port, SharedData* shared_data){
   std::thread thread1(runDataServer, port, shared_data);
-  thread1.join();
+  thread1.detach();
 }

@@ -8,6 +8,7 @@
 #include "SharedData.h"
 #include "Command.h"
 #include "OpenDataServerCommand.h"
+#include "ConnectClientCommand.h"
 #include "SleepCommand.h"
 #include "PrintCommand.h"
 #include "VarCommand.h"
