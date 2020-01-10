@@ -8,6 +8,7 @@
 #include <string>
 #include "SharedData.h"
 #include "CommandMap.h"
+#include "Expression/Interpreter.h"
 class Parser {
  private:
   std::vector<std::string> *string_commands_;

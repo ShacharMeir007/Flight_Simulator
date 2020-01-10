@@ -20,4 +20,6 @@ void PrintCommand::execute(std::vector<std::string> &args) {
 int PrintCommand::numArg() {
   return 1;
 }
-PrintCommand::PrintCommand(SharedData *data) : Command(data) {}
+PrintCommand::PrintCommand(SharedData *p_data, Interpreter *p_interpreter) : Command(p_data, p_interpreter) {
+
+}

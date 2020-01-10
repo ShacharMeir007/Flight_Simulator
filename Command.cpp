@@ -3,9 +3,7 @@
 //
 
 #include "Command.h"
-Command::Command(SharedData * shared) {
-  this->shared_data = shared;
-}
+
 void Command::initInterpreterVar() {
   std::vector<std::string>* var_list = this->shared_data->safe_getVars();
   SymbolTable* table = this->shared_data->safe_getSymbolTable();
@@ -17,6 +15,10 @@ void Command::setVariablesFromVector(std::vector<std::string> * vector,
   for (std::string& s : *vector){
     double value = table->get(s).GetValue();
     std::string var_str = s+"="+std::to_string(value);
-    this->interpreter_.setVariables(var_str.c_str());
+    this->interpreter_->setVariables(var_str.c_str());
   }
+}
+Command::Command(SharedData * data, Interpreter * interpreter) {
+  this->shared_data = data;
+  this->interpreter_ = interpreter;
 }

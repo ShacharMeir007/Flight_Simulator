@@ -18,4 +18,7 @@ void ConnectClientCommand::execute(std::vector<std::string> &args) {
 int ConnectClientCommand::numArg() {
   return 2;
 }
-ConnectClientCommand::ConnectClientCommand(SharedData *data) : Command(data) {}
+ConnectClientCommand::ConnectClientCommand(SharedData *p_data, Interpreter *p_interpreter) : Command(p_data,
+                                                                                                     p_interpreter) {
+
+}

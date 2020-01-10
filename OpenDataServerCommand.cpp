@@ -2,9 +2,9 @@
 // Created by shachar Meir on 06/01/2020.
 //
 
-#include <sstream>
+
 #include "OpenDataServerCommand.h"
-#include "MyServer.h"
+
 void OpenDataServerCommand::execute(std::vector<std::string>& args) {
   if ((int) args.size() != numArg()){
     throw "Not amount of arguments required";
@@ -20,4 +20,4 @@ void OpenDataServerCommand::execute(std::vector<std::string>& args) {
 int OpenDataServerCommand::numArg() {
   return 1;
 }
-OpenDataServerCommand::OpenDataServerCommand(SharedData *data) : Command(data) {}
+OpenDataServerCommand::OpenDataServerCommand(SharedData *data, Interpreter *interpreter) : Command(data, interpreter) {}

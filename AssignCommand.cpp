@@ -13,7 +13,7 @@ void AssignCommand::execute(std::vector<std::string> &args) {
   this->shared_data->harsh_lock();
   this->initInterpreterVar();
   try{
-  Expression* expression1 = this->interpreter_.interpret(expression.c_str());
+  Expression* expression1 = this->interpreter_->interpret(expression.c_str());
     double new_val = expression1->calculate();
     this->shared_data->safe_changeValue(var_name, new_val);
   } catch (const char* p){
@@ -26,13 +26,8 @@ void AssignCommand::execute(std::vector<std::string> &args) {
 int AssignCommand::numArg() {
   return 2;
 }
-void AssignCommand::setVariablesFromVector(std::vector<std::string> * vector,
-    SymbolTable* table) {
-  for (std::string& s : *vector){
-    double value = table->get(s).GetValue();
-    std::string var_str = s+"="+std::to_string(value);
-    this->interpreter_.setVariables(var_str.c_str());
-  }
+
+AssignCommand::AssignCommand(SharedData *p_data, Interpreter *p_interpreter) : Command(p_data, p_interpreter) {
+
 }
-AssignCommand::AssignCommand(SharedData *data) : Command(data) {}
 

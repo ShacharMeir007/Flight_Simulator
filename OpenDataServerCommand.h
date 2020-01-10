@@ -5,10 +5,13 @@
 #ifndef FLIGHT_SIMULATOR__OPENDATASERVERCOMMAND_H_
 #define FLIGHT_SIMULATOR__OPENDATASERVERCOMMAND_H_
 #include "Command.h"
-
+#include "MyServer.h"
+#include <sstream>
 class OpenDataServerCommand: public Command {
  public:
-  OpenDataServerCommand(SharedData *data);
+ private:
+ public:
+  OpenDataServerCommand(SharedData *data, Interpreter *interpreter);
  private:
   void execute(std::vector<std::string>& args) override;
   int numArg() override;

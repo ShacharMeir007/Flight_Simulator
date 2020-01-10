@@ -8,7 +8,7 @@
 #include "MyClient.h"
 class ConnectClientCommand: public Command {
  public:
-  ConnectClientCommand(SharedData *data);
+  ConnectClientCommand(SharedData *p_data, Interpreter *p_interpreter);
   void execute(std::vector<std::string> &args) override;
   int numArg() override;
   ~ConnectClientCommand() override = default;

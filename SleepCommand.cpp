@@ -18,4 +18,6 @@ void SleepCommand::execute(std::vector<std::string> &args) {
 int SleepCommand::numArg() {
   return 1;
 }
-SleepCommand::SleepCommand(SharedData *data) : Command(data) {}
+SleepCommand::SleepCommand(SharedData *p_data, Interpreter *p_interpreter) : Command(p_data, p_interpreter) {
+
+}

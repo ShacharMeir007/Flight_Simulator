@@ -7,7 +7,7 @@
 #include "Command.h"
 class SleepCommand: public Command {
  public:
-  SleepCommand(SharedData *data);
+  SleepCommand(SharedData *p_data, Interpreter *p_interpreter);
  private:
   void execute(std::vector<std::string> &args) override;
   int numArg() override;

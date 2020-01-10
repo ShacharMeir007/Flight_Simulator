@@ -13,12 +13,12 @@ Command* CommandMap::getCommand(std::string& s) {
   }
 
 }
-CommandMap::CommandMap(SharedData* data) {
-  map_["openDataServer"] = new OpenDataServerCommand(data);
-  map_["connectControlClient"] = new ConnectClientCommand(data);
-  map_["Print"] = new PrintCommand(data);
-  map_["Sleep"] = new SleepCommand(data);
-  map_["var"] = new VarCommand(data);
-  map_["="] = new AssignCommand(data);
-  map_["while"] = new IfWhileCommand(data);
+CommandMap::CommandMap(SharedData* data, Interpreter* interpreter) {
+  map_["openDataServer"] = new OpenDataServerCommand(data, interpreter);
+  map_["connectControlClient"] = new ConnectClientCommand(data, interpreter);
+  map_["Print"] = new PrintCommand(data, interpreter);
+  map_["Sleep"] = new SleepCommand(data, interpreter);
+  map_["var"] = new VarCommand(data, interpreter);
+  map_["="] = new AssignCommand(data, interpreter);
+  map_["while"] = new IfWhileCommand(data, interpreter);
 }

@@ -21,18 +21,20 @@ void IfWhileCommand::execute(std::vector<std::string> &args) {
     this->shared_data->harsh_lock();
     initInterpreterVar();
     this->shared_data->harsh_release();
-    result1 = this->interpreter_.interpret(expression1.c_str());
-    result2 = this->interpreter_.interpret(expression2.c_str());
+    result1 = this->interpreter_->interpret(expression1.c_str());
+    result2 = this->interpreter_->interpret(expression2.c_str());
     int u = 1;
     if (ifOrWhile == "while") {
       while (check_condition(result1,condition, result2)){
+        parser.parse(&commands);
+        std::cout<<"loop number"<<u<<std::endl;
         this->shared_data->harsh_lock();
         initInterpreterVar();
         this->shared_data->harsh_release();
-        result1 = this->interpreter_.interpret(expression1.c_str());
-        result2 = this->interpreter_.interpret(expression2.c_str());
-        parser.parse(&commands);
-        std::cout<<"loop number"<<u<<std::endl;
+        delete (result1);
+        delete (result2);
+        result1 = this->interpreter_->interpret(expression1.c_str());
+        result2 = this->interpreter_->interpret(expression2.c_str());
         u++;
       }
     } else {
@@ -50,9 +52,8 @@ int IfWhileCommand::numArg() {
 }
 
 
-IfWhileCommand::IfWhileCommand(SharedData *data) : Command(data) {
 
-}
+
 bool IfWhileCommand::check_condition(Expression *exp1, std::string condition, Expression *exp2) {
   if (condition == "<") {
     return exp1->calculate() < exp2->calculate();
@@ -69,6 +70,9 @@ bool IfWhileCommand::check_condition(Expression *exp1, std::string condition, Ex
   } else {
     throw "condition is invalid";
   }
+}
+IfWhileCommand::IfWhileCommand(SharedData *p_data, Interpreter *p_interpreter) : Command(p_data, p_interpreter) {
+
 }
 
 

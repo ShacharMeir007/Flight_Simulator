@@ -8,7 +8,7 @@
 #include <iostream>
 class PrintCommand: public Command {
  public:
-  explicit PrintCommand(SharedData *data);
+  PrintCommand(SharedData *p_data, Interpreter *p_interpreter);
  private:
   void execute(std::vector<std::string> &args) override;
   int numArg() override;

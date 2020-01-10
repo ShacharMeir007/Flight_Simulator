@@ -18,7 +18,7 @@ class CommandMap {
   std::unordered_map<std::string, Command*> map_;
  public:
   Command* getCommand(std::string& s);
-  CommandMap(SharedData* data);
+  CommandMap(SharedData* data, Interpreter* interpreter);
 };
 
 #endif //FLIGHT_SIMULATOR__COMMANDMAP_H_

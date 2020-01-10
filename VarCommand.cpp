@@ -14,7 +14,7 @@ void VarCommand::execute(std::vector<std::string> &args) {
   SymbolTable* symbol_table = this->shared_data->safe_getSymbolTable();
   this->initInterpreterVar();
   if(bind == "="){
-    Expression* e = this->interpreter_.interpret(sim.c_str());
+    Expression* e = this->interpreter_->interpret(sim.c_str());
     double value = e->calculate();
     Symbol symbol(value, "");
     symbol_table->add(var_name, symbol);
@@ -50,6 +50,9 @@ void VarCommand::execute(std::vector<std::string> &args) {
     throw "right bind vector was not initialized";
   }
   this->shared_data->harsh_release();
+}
+VarCommand::VarCommand(SharedData *p_data, Interpreter *p_interpreter) : Command(p_data, p_interpreter) {
+
 }
 int VarCommand::numArg() {
   return 3;

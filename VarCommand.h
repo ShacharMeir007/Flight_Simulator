@@ -9,7 +9,7 @@
 #include "Symbol.h"
 class VarCommand: public Command {
  public:
-  explicit VarCommand(SharedData* data):Command(data){}
+  VarCommand(SharedData *p_data, Interpreter *p_interpreter);
   void execute(std::vector<std::string> &args) override;
   int numArg() override;
 

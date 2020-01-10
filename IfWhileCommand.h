@@ -9,7 +9,7 @@
 
 class IfWhileCommand: public Command {
  public:
-  IfWhileCommand(SharedData *data);
+  IfWhileCommand(SharedData *p_data, Interpreter *p_interpreter);
   void execute(std::vector<std::string> &args) override;
   int numArg() override;
   ~IfWhileCommand() override = default;

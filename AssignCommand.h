@@ -6,16 +6,13 @@
 #define FLIGHT_SIMULATOR__ASSIGNCOMMAND_H_
 #include "Command.h"
 class AssignCommand: public Command {
- private:
-  Interpreter interpreter_;
-  void setVariablesFromVector(std::vector<std::string>*,SymbolTable*);
  public:
-  AssignCommand(SharedData *data);
   void execute(std::vector<std::string> &args) override;
   int numArg() override;
 
   ~AssignCommand() override = default;
 
+  AssignCommand(SharedData *p_data, Interpreter *p_interpreter);
 };
 
 #endif //FLIGHT_SIMULATOR__ASSIGNCOMMAND_H_
