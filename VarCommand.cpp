@@ -4,7 +4,7 @@
 
 #include "VarCommand.h"
 void VarCommand::execute(std::vector<std::string> &args) {
-  if (args.size() != numArg()){
+  if ((int)args.size() != numArg()){
     throw "Not amount of arguments required";
   }
   std::string var_name = args[0];

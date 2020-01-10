@@ -6,7 +6,7 @@
 #include "SleepCommand.h"
 #include <thread>
 void SleepCommand::execute(std::vector<std::string> &args) {
-  if (args.size() != numArg()){
+  if ((int)args.size() != numArg()){
     throw "Not amount of arguments required";
   }
   std::string str_milliseconds = args[0];

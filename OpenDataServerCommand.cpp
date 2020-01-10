@@ -6,7 +6,7 @@
 #include "OpenDataServerCommand.h"
 #include "MyServer.h"
 void OpenDataServerCommand::execute(std::vector<std::string>& args) {
-  if (args.size() != numArg()){
+  if ((int) args.size() != numArg()){
     throw "Not amount of arguments required";
   }
   std::string port_str = args[0];

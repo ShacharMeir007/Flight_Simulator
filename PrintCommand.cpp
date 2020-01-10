@@ -4,7 +4,7 @@
 
 #include "PrintCommand.h"
 void PrintCommand::execute(std::vector<std::string> &args) {
-  if (args.size() != numArg()){
+  if ((int )args.size() != numArg()){
     throw "Not amount of arguments required";
   }
   std::cout<<args[0]<<std::endl;

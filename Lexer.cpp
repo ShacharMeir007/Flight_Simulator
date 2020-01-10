@@ -106,7 +106,7 @@ void Lexer::handleAssign(std::vector<std::string> &vector) {
   //adding var name
   newVec.push_back(vector[0]);
   //creating Expression string
-  for (int kI = 2; kI < vector.size() ; ++kI) {
+  for (unsigned int kI = 2; kI < vector.size() ; ++kI) {
     expressionString += vector[kI];
   }
   newVec.push_back(expressionString);

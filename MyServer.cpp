@@ -50,7 +50,7 @@ void runDataServer(int port, SharedData* data)
   //reading from client
   while (true) {
     char buffer[1024] = {0};
-    int valread = read(client_socket, buffer, 1024);
+    read(client_socket, buffer, 1024);
     std::cout << buffer << std::endl;
   }
   //writing back to client
