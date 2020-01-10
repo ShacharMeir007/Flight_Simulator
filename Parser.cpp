@@ -42,11 +42,8 @@ void Parser::parse(std::vector<std::string> * string_commands_) {
         first++;
       }
       j++;
-      auto last = first;
-      for (last = first; *last != "}"; ++last);
-      args = new std::vector<std::string>(first, last);
       c->execute(argv);
-      index += j+1;
+      index += j;
     }
   }
 }

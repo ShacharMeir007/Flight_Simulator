@@ -14,7 +14,7 @@ void spacen(std::string& str);
 std::vector<std::string> split(char token, std::string& str);
 void strip(std::string& str);
 bool isVar(std::string& str);
-bool isPrint(std::string& str);
+bool isInQuotations(std::string& str);
 bool isAssign(std::string& str);
 bool isCondition(std::string& str);
 bool isLogicOperator(std::string &str);

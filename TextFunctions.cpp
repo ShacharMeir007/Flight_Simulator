@@ -122,8 +122,12 @@ void strip(std::string& str) {
 bool isVar(std::string& str) {
   return str.substr(0, 3) == "var";
 }
-bool isPrint(std::string& str) {
-  return str.substr(0, 5) == "Print";
+bool isInQuotations(std::string& str) {
+  std::string tmp = str;
+  remove_quotation(tmp);
+  int x = str.size();
+  std::string tmp2 = str.substr(1, x-2);
+  return tmp2 == tmp;
 }
 bool isAssign(std::string& str) {
   for (char& c: str){

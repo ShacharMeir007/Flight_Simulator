@@ -56,7 +56,7 @@ std::vector<std::string> Lexer::lex() {
     } else if(isAssign(line)) {
       handleAssign(vector);
     }
-    handleQuotation(vector);
+    //handleQuotation(vector);
     this->copyCommands(vector);
   }
   //this->printVector(this->commends);

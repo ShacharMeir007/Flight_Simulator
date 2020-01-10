@@ -17,6 +17,7 @@ void VarCommand::execute(std::vector<std::string> &args) {
     Expression* e = this->interpreter_.interpret(sim.c_str());
     double value = e->calculate();
     Symbol symbol(value, "");
+    symbol_table->add(var_name, symbol);
   } else {
     Symbol symbol(0, sim);
     symbol_table->add(var_name, symbol);
