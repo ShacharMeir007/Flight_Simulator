@@ -24,7 +24,7 @@ std::vector<std::string> *SharedData::safe_getVarsLeftBind()  {
   lock.release_lock();
   return left;
 }
-SymbolTable *SharedData::sage_getSymbolTable() {
+SymbolTable *SharedData::safe_getSymbolTable() {
   lock.acquire_lock();
   SymbolTable* table = symbol_table_;
   lock.release_lock();

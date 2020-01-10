@@ -62,15 +62,15 @@ std::vector<std::string> Lexer::lex() {
   return this->commends;
 }
 //handle functions
-void Lexer::handleVar(std::vector<std::string>& basic_string) {
+void Lexer::handleVar(std::vector<std::string>& vector) {
   std::vector<std::string> elements;
-  for (std::string s: basic_string){
+  for (std::string s: vector){
     if (s!="sim"){
       remove_quotation(s);
       elements.push_back(s);
     }
   }
-  basic_string = elements;
+  vector = elements;
 }
 void Lexer::handleCondition(std::vector<std::string>& vector) {
   std::vector<std::string> newVec;

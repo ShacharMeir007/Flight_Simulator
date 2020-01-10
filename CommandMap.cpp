@@ -19,4 +19,5 @@ CommandMap::CommandMap(SharedData* data) {
   map_["Sleep"] = new SleepCommand(data);
   map_["var"] = new VarCommand(data);
   map_["="] = new AssignCommand(data);
+  map_["while"] = new WhileCommand(data);
 }

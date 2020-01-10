@@ -17,7 +17,7 @@ class SharedData {
   SymbolTable* symbol_table_ = nullptr;
   ThreadLock lock;
  public:
-  SymbolTable *sage_getSymbolTable();
+  SymbolTable *safe_getSymbolTable();
   SharedData();
   virtual ~SharedData();
   std::vector<std::string> *safe_getVarsRightBind();

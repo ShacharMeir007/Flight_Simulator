@@ -11,10 +11,11 @@
 class Parser {
  private:
   std::vector<std::string> *string_commands_;
+  SharedData* data;
  public:
 
-  void parse(SharedData* data);
-  Parser(std::vector<std::string> *stringCommands);
+  void parse(std::vector<std::string> *stringCommands);
+  Parser(SharedData* data);
 };
 
 #endif //FLIGHT_SIMULATOR__PARSER_H_

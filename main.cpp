@@ -8,9 +8,9 @@ int main(int argc, char* argv[]) {
   SharedData* shared_data = new SharedData();
   Lexer lexer(argv[1]);
   std::vector<std::string> commands = lexer.lex();
-  Parser parser = Parser(&commands);
+  Parser parser = Parser(shared_data);
   try {
-    parser.parse(shared_data);
+    parser.parse(&commands);
     //Parser::shared_data_.safe_getVarsLeftBind();
   } catch (char const* exception){
     std::cout<<exception<<std::endl;

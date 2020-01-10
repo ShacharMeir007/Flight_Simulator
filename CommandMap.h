@@ -12,6 +12,7 @@
 #include "PrintCommand.h"
 #include "VarCommand.h"
 #include "AssignCommand.h"
+#include "WhileCommand.h"
 class CommandMap {
   std::unordered_map<std::string, Command*> map_;
  public:

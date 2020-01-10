@@ -12,7 +12,7 @@ void VarCommand::execute(std::vector<std::string> &args) {
   std::string sim = args[2];
   Symbol symbol(0, sim);
   this->shared_data->harsh_lock();
-  SymbolTable* symbol_table = this->shared_data->sage_getSymbolTable();
+  SymbolTable* symbol_table = this->shared_data->safe_getSymbolTable();
   if (symbol_table){
     symbol_table->add(var_name, symbol);
   } else {

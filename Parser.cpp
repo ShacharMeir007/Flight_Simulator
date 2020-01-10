@@ -3,10 +3,10 @@
 //
 
 #include "Parser.h"
-Parser::Parser(std::vector<std::string> *stringCommands) {
-  string_commands_ = stringCommands;
+Parser::Parser(SharedData* data) {
+  this->data = data;
 }
-void Parser::parse(SharedData* data) {
+void Parser::parse(std::vector<std::string> * string_commands_) {
 
   int size = string_commands_->size(), index = 0, numArgs;
   CommandMap cm = CommandMap(data);
@@ -26,11 +26,27 @@ void Parser::parse(SharedData* data) {
       c->execute(*args);
       index += numArgs + 1;
     } else {
-      auto first = string_commands_->begin() + index + 2;
+      std::vector<std::string> argv;
+      auto first = string_commands_->begin() + index + 1;
+      int j = 0;
+      while (*first!="{"){
+        argv.push_back(*first);
+        j++;
+        first++;
+      }
+      j++;
+      first++;
+      while (*first!="}"){
+        argv.push_back(*first);
+        j++;
+        first++;
+      }
+      j++;
       auto last = first;
       for (last = first; *last != "}"; ++last);
       args = new std::vector<std::string>(first, last);
-      c->execute(*args);
+      c->execute(argv);
+      index += j+1;
     }
   }
 }

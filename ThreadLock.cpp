@@ -20,6 +20,7 @@ bool ThreadLock::release_lock() {
   if (!is_same_thread){
     this->mutex_.unlock();
     this->locking_thread = "";
+    //std::cout<<"unlocked"<<std::endl;
     return true;
   }
   return false;

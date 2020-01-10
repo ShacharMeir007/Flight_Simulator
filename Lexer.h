@@ -29,7 +29,7 @@ class Lexer {
   virtual ~Lexer();
   std::vector<std::string> lex();
 
-  void handleVar(std::vector<std::string>& basic_string);
+  void handleVar(std::vector<std::string>& vector);
   void handleCondition(std::vector<std::string>& vector);
   void handleQuotation(std::vector<std::string>& vector);
   void handleAssign(std::vector<std::string> &vector);
