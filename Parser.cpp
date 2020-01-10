@@ -27,7 +27,7 @@ void Parser::parse(std::vector<std::string> * string_commands_) {
       index += numArgs + 1;
     } else {
       std::vector<std::string> argv;
-      auto first = string_commands_->begin() + index + 1;
+      auto first = string_commands_->begin() + index;
       int j = 0;
       while (*first!="{"){
         argv.push_back(*first);
