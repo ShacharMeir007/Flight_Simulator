@@ -6,3 +6,17 @@
 Command::Command(SharedData * shared) {
   this->shared_data = shared;
 }
+void Command::initInterpreterVar() {
+  std::vector<std::string>* var_list = this->shared_data->safe_getVars();
+  SymbolTable* table = this->shared_data->safe_getSymbolTable();
+  setVariablesFromVector(var_list, table);
+
+}
+void Command::setVariablesFromVector(std::vector<std::string> * vector,
+                                          SymbolTable* table) {
+  for (std::string& s : *vector){
+    double value = table->get(s).GetValue();
+    std::string var_str = s+"="+std::to_string(value);
+    this->interpreter_.setVariables(var_str.c_str());
+  }
+}

@@ -12,7 +12,10 @@
 #include "Expression/Interpreter.h"
 class Command {
  protected:
+  Interpreter interpreter_;
   SharedData* shared_data;
+  void initInterpreterVar();
+  void setVariablesFromVector(vector<std::string> *vector, SymbolTable *table);
  public:
   explicit Command(SharedData*);
 virtual void execute(std::vector<std::string>& args) = 0;

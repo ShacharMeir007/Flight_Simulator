@@ -56,6 +56,27 @@ void remove_quotation(std::string& str){
   }
   str = tmp;
 }
+void spacen(std::string& str){
+  char signs[]= {'!','='};
+
+  std::string tmp;
+  for (char c: str){
+    bool is_sign = false;
+    for(char p: signs){
+      if (c == p){
+        is_sign = true;
+      }
+    }
+    if (is_sign){
+      tmp+="  ";
+      tmp+=c;
+      tmp+="  ";
+    } else {
+      tmp+= c;
+    }
+  }
+  str =tmp;
+}
 std::vector<std::string> split(const char token, std::string& str) {
   std::vector<std::string> vector;
   std::string temp;

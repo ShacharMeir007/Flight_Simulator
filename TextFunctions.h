@@ -10,6 +10,7 @@
 void replace(char token1,const std::string & token2, std::string& str);
 void remove_redundant_signs(std::string& str);
 void remove_quotation(std::string& str);
+void spacen(std::string& str);
 std::vector<std::string> split(char token, std::string& str);
 void strip(std::string& str);
 bool isVar(std::string& str);

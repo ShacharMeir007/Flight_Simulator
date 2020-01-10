@@ -38,14 +38,7 @@ void WhileCommand::execute(std::vector<std::string> &args) {
 int WhileCommand::numArg() {
   return -1;
 }
-void WhileCommand::setVariablesFromVector(std::vector<std::string> * vector,
-                                           SymbolTable* table) {
-  for (std::string& s : *vector){
-    double value = table->get(s).GetValue();
-    std::string var_str = s+"="+std::to_string(value);
-    this->interpreter_.setVariables(var_str.c_str());
-  }
-}
+
 
 WhileCommand::WhileCommand(SharedData *data) : Command(data) {
 
@@ -53,4 +46,5 @@ WhileCommand::WhileCommand(SharedData *data) : Command(data) {
 bool WhileCommand::check_condition(Expression *exp1, std::string condition, Expression *exp2) {
   return false;
 }
+
 

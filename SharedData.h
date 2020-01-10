@@ -14,6 +14,10 @@
 class SharedData {
   std::vector<std::string>* vars_right_Bind = nullptr;
   std::vector<std::string>* vars_left_Bind = nullptr;
+  std::vector<std::string>* vars = nullptr;
+ public:
+  std::vector<std::string> *safe_getVars();
+ private:
   SymbolTable* symbol_table_ = nullptr;
   ThreadLock lock;
  public:

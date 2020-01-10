@@ -11,11 +11,7 @@ void AssignCommand::execute(std::vector<std::string> &args) {
   std::string expression = args[1];
 
   this->shared_data->harsh_lock();
-  std::vector<std::string>* right_list = this->shared_data->safe_getVarsRightBind();
-  std::vector<std::string>* left_list = this->shared_data->safe_getVarsLeftBind();
-  SymbolTable* table = this->shared_data->safe_getSymbolTable();
-  setVariablesFromVector(right_list, table);
-  setVariablesFromVector(left_list, table);
+  this->initInterpreterVar();
   try{
   Expression* expression1 = this->interpreter_.interpret(expression.c_str());
     double new_val = expression1->calculate();

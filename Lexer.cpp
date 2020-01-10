@@ -46,6 +46,7 @@ std::vector<std::string> Lexer::lex() {
     replace('('," ",line);
     replace(')',"",line);
     replace(','," ", line);
+    //spacen(line);
     remove_redundant_signs(line);
     std::vector<std::string> vector = split(' ', line);
     if(isVar(line)){
@@ -64,11 +65,24 @@ std::vector<std::string> Lexer::lex() {
 //handle functions
 void Lexer::handleVar(std::vector<std::string>& vector) {
   std::vector<std::string> elements;
-  for (std::string s: vector){
-    if (s!="sim"){
-      remove_quotation(s);
-      elements.push_back(s);
+  std::string expressionString;
+  bool is_equality = false;
+  int size = vector.size();
+  for (int kI = 0; kI < size; ++kI) {
+    if (!is_equality) {
+      if (vector[kI] != "sim") {
+        remove_quotation(vector[kI]);
+        elements.push_back(vector[kI]);
+      }
+      if (vector[kI] == "=") {
+        is_equality = true;
+      }
+    } else{
+      expressionString += vector[kI];
     }
+  }
+  if (!expressionString.empty()){
+    elements.push_back(expressionString);
   }
   vector = elements;
 }

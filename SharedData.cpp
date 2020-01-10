@@ -5,6 +5,7 @@
 #include "SharedData.h"
 //todo add mutex lock on changing values
 SharedData::SharedData() {
+  this->vars = new std::vector<std::string>();
   this->vars_left_Bind = new std::vector<std::string>();
   this->vars_right_Bind = new std::vector<std::string>();
   this->symbol_table_ = new SymbolTable();
@@ -48,6 +49,12 @@ void SharedData::harsh_lock() {
 void SharedData::harsh_release() {
   lock.mutex_.unlock();
   lock.locking_thread ="";
+}
+std::vector<std::string> *SharedData::safe_getVars() {
+  lock.acquire_lock();
+  std::vector<std::string> * var = vars;
+  lock.release_lock();
+  return var;
 }
 
 
