@@ -6,22 +6,22 @@
 //todo add mutex lock on changing values
 SharedData::SharedData() {
   this->vars = new std::vector<std::string>();
-  this->vars_left_Bind = new std::vector<std::string>();
-  this->vars_right_Bind = new std::vector<std::string>();
+  this->vars_left_Bind = new std::vector<std::pair<std::string,std::string>>();
+  this->vars_right_Bind = new std::vector<std::pair<std::string,std::string>>();
   this->symbol_table_ = new SymbolTable();
 }
 SharedData::~SharedData() {
 
 }
-std::vector<std::string> *SharedData::safe_getVarsRightBind()  {
+std::vector<std::pair<std::string,std::string>>* SharedData::safe_getVarsRightBind()  {
   lock.acquire_lock();
-  std::vector<std::string> * right = vars_right_Bind;
+  std::vector<std::pair<std::string,std::string>>* right = vars_right_Bind;
   lock.release_lock();
   return right;
 }
-std::vector<std::string> *SharedData::safe_getVarsLeftBind()  {
+std::vector<std::pair<std::string,std::string>>*SharedData::safe_getVarsLeftBind()  {
   lock.acquire_lock();
-  std::vector<std::string> * left = vars_left_Bind;
+  std::vector<std::pair<std::string,std::string>>* left = vars_left_Bind;
   lock.release_lock();
   return left;
 }

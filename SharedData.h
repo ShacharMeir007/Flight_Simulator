@@ -12,24 +12,24 @@
 //Every time you need to share data between threads you'll use
 //this class.
 class SharedData {
-  std::vector<std::string>* vars_right_Bind = nullptr;
-  std::vector<std::string>* vars_left_Bind = nullptr;
-  std::vector<std::string>* vars = nullptr;
- public:
-  std::vector<std::string> *safe_getVars();
  private:
+  std::vector<std::pair<std::string,std::string>>* vars_right_Bind = nullptr;
+  std::vector<std::pair<std::string,std::string>>* vars_left_Bind = nullptr;
+  std::vector<std::string>* vars = nullptr;
   SymbolTable* symbol_table_ = nullptr;
   ThreadLock lock;
  public:
+  std::condition_variable server_connected;
+  std::vector<std::string> *safe_getVars();
   SymbolTable *safe_getSymbolTable();
   SharedData();
   virtual ~SharedData();
-  std::vector<std::string> *safe_getVarsRightBind();
-  std::vector<std::string> *safe_getVarsLeftBind();
   void safe_changeValue(std::string &name, double value);
   double safe_getValue(std::string &name);
   void harsh_lock();
   void harsh_release();
+  std::vector<std::pair<std::string, std::string>> *safe_getVarsRightBind();
+  std::vector<std::pair<std::string, std::string>> *safe_getVarsLeftBind();
 };
 
 #endif //FLIGHT_SIMULATOR__SHAREDDATA_H_

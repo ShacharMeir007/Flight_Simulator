@@ -22,17 +22,19 @@ void VarCommand::execute(std::vector<std::string> &args) {
     Symbol symbol(0, sim);
     symbol_table->add(var_name, symbol);
     if (bind == "->") {
-      std::vector<std::string> *right_bind = this->shared_data->safe_getVarsRightBind();
+      std::vector<std::pair<std::string,std::string>>* right_bind = this->shared_data->safe_getVarsRightBind();
       if (right_bind) {
-        right_bind->push_back(var_name);
+        std::pair<std::string,std::string> pair(var_name,sim);
+        right_bind->push_back(pair);
       } else {
         this->shared_data->harsh_release();
         throw "right bind vector was not initialized";
       }
     } else if (bind == "<-") {
-      std::vector<std::string> *left_bind = this->shared_data->safe_getVarsLeftBind();
+      std::vector<std::pair<std::string,std::string>> *left_bind = this->shared_data->safe_getVarsLeftBind();
       if (left_bind) {
-        left_bind->push_back(var_name);
+        std::pair<std::string,std::string> pair(var_name,sim);
+        left_bind->push_back(pair);
       } else {
         this->shared_data->harsh_release();
         throw "left bind vector was not initialized";

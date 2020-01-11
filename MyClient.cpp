@@ -31,17 +31,21 @@ void runClient(int port, std::string addr, SharedData* shared_data)
   }
   shared_data->harsh_release();
   //if here we made a connection
-  char hello[] = "Hi from client";
-  int is_sent = send(client_socket , hello , strlen(hello) , 0 );
-  if (is_sent == -1) {
-    std::cout<<"Error sending message"<<std::endl;
-  } else {
-    std::cout<<"Hello message sent to server" <<std::endl;
+  while(true) {
+    char hello[] = "Hi from client";
+    shared_data->harsh_lock();
+
+
+
+    int is_sent = send(client_socket, hello, strlen(hello), 0);
+    if (is_sent == -1) {
+      std::cout << "Error sending message" << std::endl;
+    } else {
+      std::cout << "Hello message sent to server" << std::endl;
+    }
+    shared_data->harsh_release();
   }
 
-  char buffer[1024] = {0};
-  int valread = read( client_socket , buffer, 1024);
-  std::cout<<buffer<<std::endl;
 
   close(client_socket);
 
