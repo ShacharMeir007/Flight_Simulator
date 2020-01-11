@@ -19,7 +19,6 @@ class SharedData {
   SymbolTable* symbol_table_ = nullptr;
   ThreadLock lock;
  public:
-  std::condition_variable server_connected;
   std::vector<std::string> *safe_getVars();
   SymbolTable *safe_getSymbolTable();
   SharedData();
