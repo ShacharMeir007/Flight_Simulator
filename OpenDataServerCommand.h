@@ -7,6 +7,7 @@
 #include "Command.h"
 #include "MyServer.h"
 #include <sstream>
+#include <future>
 class OpenDataServerCommand: public Command {
  public:
  private:

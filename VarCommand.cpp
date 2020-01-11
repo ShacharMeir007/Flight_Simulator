@@ -10,7 +10,6 @@ void VarCommand::execute(std::vector<std::string> &args) {
   std::string var_name = args[0];
   std::string bind = args[1];
   std::string sim = args[2];
-  this->shared_data->harsh_lock();
   SymbolTable* symbol_table = this->shared_data->safe_getSymbolTable();
   this->initInterpreterVar();
   if(bind == "="){
@@ -27,7 +26,6 @@ void VarCommand::execute(std::vector<std::string> &args) {
         std::pair<std::string,std::string> pair(var_name,sim);
         right_bind->push_back(pair);
       } else {
-        this->shared_data->harsh_release();
         throw "right bind vector was not initialized";
       }
     } else if (bind == "<-") {
@@ -36,11 +34,9 @@ void VarCommand::execute(std::vector<std::string> &args) {
         std::pair<std::string,std::string> pair(var_name,sim);
         left_bind->push_back(pair);
       } else {
-        this->shared_data->harsh_release();
         throw "left bind vector was not initialized";
       }
     } else {
-      this->shared_data->harsh_release();
       throw "couldn't find bind type";
     }
   }
@@ -48,10 +44,8 @@ void VarCommand::execute(std::vector<std::string> &args) {
   if (vars){
     vars->push_back(var_name);
   } else {
-    this->shared_data->harsh_release();
     throw "right bind vector was not initialized";
   }
-  this->shared_data->harsh_release();
 }
 VarCommand::VarCommand(SharedData *p_data, Interpreter *p_interpreter) : Command(p_data, p_interpreter) {
 

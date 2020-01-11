@@ -8,12 +8,12 @@ void PrintCommand::execute(std::vector<std::string> &args) {
     throw "Not amount of arguments required";
   }
   if (isInQuotations(args[0])){
-    std::cout<<args[0]<<std::endl;
+    std::string msg = args[0];
+    remove_quotation(msg);
+    std::cout<<msg<<std::endl;
   } else{
-    shared_data->harsh_lock();
     auto table = shared_data->safe_getSymbolTable();
     double val = table->get(args[0]).GetValue();
-    shared_data->harsh_release();
     std::cout<<val<<std::endl;
   }
 }

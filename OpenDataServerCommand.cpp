@@ -13,9 +13,11 @@ void OpenDataServerCommand::execute(std::vector<std::string>& args) {
   std::stringstream geek(port_str);
   int port = 0;
   geek>>port;
-  this->shared_data->harsh_lock();
-  openDataServer(port,this->shared_data);
-  this->shared_data->harsh_release();
+
+  std::future<int> connectionFuture = std::async(receiveConnection,port);
+  int connection = connectionFuture.get();
+  std::thread thread(runDataServer, connection, shared_data);
+  thread.detach();
 }
 int OpenDataServerCommand::numArg() {
   return 1;

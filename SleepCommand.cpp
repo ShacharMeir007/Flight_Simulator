@@ -13,7 +13,9 @@ void SleepCommand::execute(std::vector<std::string> &args) {
   std::stringstream geek(str_milliseconds);
   int milliseconds = 0;
   geek >> milliseconds;
-  std::this_thread::sleep_for(std::chrono::microseconds(milliseconds));
+  std::cout<<"now sleeping for "<<milliseconds<<std::endl;
+  std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
+  std::cout<<"I'm awake now"<<std::endl;
 }
 int SleepCommand::numArg() {
   return 1;

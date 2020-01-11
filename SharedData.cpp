@@ -8,53 +8,58 @@ SharedData::SharedData() {
   this->vars = new std::vector<std::string>();
   this->vars_left_Bind = new std::vector<std::pair<std::string,std::string>>();
   this->vars_right_Bind = new std::vector<std::pair<std::string,std::string>>();
+  this->vars_changed = new std::vector<std::pair<std::string,std::string>>();
   this->symbol_table_ = new SymbolTable();
 }
 SharedData::~SharedData() {
 
 }
 std::vector<std::pair<std::string,std::string>>* SharedData::safe_getVarsRightBind()  {
-  lock.acquire_lock();
+
   std::vector<std::pair<std::string,std::string>>* right = vars_right_Bind;
-  lock.release_lock();
+
   return right;
 }
 std::vector<std::pair<std::string,std::string>>*SharedData::safe_getVarsLeftBind()  {
-  lock.acquire_lock();
+
   std::vector<std::pair<std::string,std::string>>* left = vars_left_Bind;
-  lock.release_lock();
+
   return left;
 }
 SymbolTable *SharedData::safe_getSymbolTable() {
-  lock.acquire_lock();
+
   SymbolTable* table = symbol_table_;
-  lock.release_lock();
+
   return table;
 }
+std::vector<std::pair<std::string,std::string>>* SharedData::safe_getChangedVars()  {
+
+  std::vector<std::pair<std::string,std::string>>* changed = vars_changed;
+
+  return changed;
+}
 void SharedData::safe_changeValue(std::string & name, double value) {
-  lock.acquire_lock();
+
   this->symbol_table_->get(name).SetValue(value);
-  lock.release_lock();
+
 }
 double SharedData::safe_getValue(std::string & name) {
-  lock.acquire_lock();
+
   double val = this->symbol_table_->get(name).GetValue();
-  lock.release_lock();
+
   return val;
 }
-void SharedData::harsh_lock() {
-  lock.mutex_.lock();
-  lock.set_locking_thread();
-}
-void SharedData::harsh_release() {
-  lock.mutex_.unlock();
-  lock.locking_thread ="";
-}
+
 std::vector<std::string> *SharedData::safe_getVars() {
-  lock.acquire_lock();
+
   std::vector<std::string> * var = vars;
-  lock.release_lock();
+
   return var;
+}
+void SharedData::safe_add_to_change(std::pair<std::string, std::string>& pair) {
+
+  this->vars_changed->push_back(pair);
+
 }
 
 
