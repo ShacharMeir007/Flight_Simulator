@@ -7,7 +7,6 @@
 void runClient(int port, std::string addr, SharedData* shared_data)
 {
   //create socket
-  shared_data->harsh_lock();
   int client_socket = socket(AF_INET, SOCK_STREAM, 0);
   if (client_socket == -1) {
     //error
@@ -29,21 +28,23 @@ void runClient(int port, std::string addr, SharedData* shared_data)
   } else {
     std::cout<<"Client is now connected to server" <<std::endl;
   }
-  shared_data->harsh_release();
   //if here we made a connection
   while(true) {
-    char hello[] = "Hi from client";
-    shared_data->harsh_lock();
+    auto bind_vars = shared_data->safe_getChangedVars();
+    for (auto pair: *bind_vars) {
+      std::string message;
+      double val = shared_data->safe_getValue(pair.first);
+      message += "set";
+      message += pair.second;
+      message = message + " " + std::to_string(val);
+      int is_sent = send(client_socket, message.c_str(), message.size(), 0);
+      if (is_sent == -1) {
+        std::cout << "Error sending message" << std::endl;
+      } /*else {
+        std::cout << pair.first<<" updated" << std::endl;
+      }*/
 
-
-
-    int is_sent = send(client_socket, hello, strlen(hello), 0);
-    if (is_sent == -1) {
-      std::cout << "Error sending message" << std::endl;
-    } else {
-      std::cout << "Hello message sent to server" << std::endl;
     }
-    shared_data->harsh_release();
   }
 
 

@@ -36,7 +36,6 @@ CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../IfWhileCommand.h
 CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../MyClient.h
 CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../MyServer.h
 CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../OpenDataServerCommand.h
-CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../Parser.h
 CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../PrintCommand.h
 CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../SharedData.h
 CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../SleepCommand.h
@@ -105,49 +104,26 @@ CMakeFiles/Flight_Simulator.dir/MyClient.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/MyClient.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/MyClient.cpp.o: ../ThreadLock.h
 
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../AssignCommand.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../Command.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../CommandMap.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../ConnectClientCommand.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../Expression/Expression.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../Expression/Interpreter.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../Expression/ex1.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../IfWhileCommand.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../MyClient.h
 CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../MyServer.cpp
 CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../MyServer.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../OpenDataServerCommand.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../Parser.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../PrintCommand.h
 CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../SharedData.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../SleepCommand.h
 CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../TextFunctions.h
 CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../ThreadLock.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../VarCommand.h
 
-CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../AssignCommand.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../Command.h
-CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../CommandMap.h
-CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../ConnectClientCommand.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../Expression/Expression.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../Expression/Interpreter.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../Expression/ex1.h
-CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../IfWhileCommand.h
-CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../MyClient.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../MyServer.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../OpenDataServerCommand.cpp
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../OpenDataServerCommand.h
-CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../Parser.h
-CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../PrintCommand.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../SharedData.h
-CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../SleepCommand.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../TextFunctions.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../ThreadLock.h
-CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../VarCommand.h
 
 CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../AssignCommand.h
 CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../Command.h

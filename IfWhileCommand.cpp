@@ -18,9 +18,7 @@ void IfWhileCommand::execute(std::vector<std::string> &args) {
   try{
     Expression* result1;
     Expression* result2;
-    this->shared_data->harsh_lock();
     initInterpreterVar();
-    this->shared_data->harsh_release();
     result1 = this->interpreter_->interpret(expression1.c_str());
     result2 = this->interpreter_->interpret(expression2.c_str());
     int u = 1;
@@ -28,9 +26,7 @@ void IfWhileCommand::execute(std::vector<std::string> &args) {
       while (check_condition(result1,condition, result2)){
         parser.parse(&commands);
         std::cout<<"loop number"<<u<<std::endl;
-        this->shared_data->harsh_lock();
         initInterpreterVar();
-        this->shared_data->harsh_release();
         delete (result1);
         delete (result2);
         result1 = this->interpreter_->interpret(expression1.c_str());
@@ -44,7 +40,6 @@ void IfWhileCommand::execute(std::vector<std::string> &args) {
     }
   } catch (const char* p){
     std::cout<<p<<std::endl;
-    this->shared_data->harsh_release();
   }
 }
 int IfWhileCommand::numArg() {
