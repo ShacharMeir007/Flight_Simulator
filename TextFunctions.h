@@ -18,4 +18,5 @@ bool isInQuotations(std::string& str);
 bool isAssign(std::string& str);
 bool isCondition(std::string& str);
 bool isLogicOperator(std::string &str);
+void makeConditionBetSpaces(std::string s);
 #endif //FLIGHT_SIMULATOR__TEXTFUNCTIONS_H_
