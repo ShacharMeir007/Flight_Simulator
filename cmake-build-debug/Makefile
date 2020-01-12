@@ -636,33 +636,6 @@ TextFunctions.cpp.s:
 	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/TextFunctions.cpp.s
 .PHONY : TextFunctions.cpp.s
 
-ThreadLock.o: ThreadLock.cpp.o
-
-.PHONY : ThreadLock.o
-
-# target to build an object file
-ThreadLock.cpp.o:
-	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/ThreadLock.cpp.o
-.PHONY : ThreadLock.cpp.o
-
-ThreadLock.i: ThreadLock.cpp.i
-
-.PHONY : ThreadLock.i
-
-# target to preprocess a source file
-ThreadLock.cpp.i:
-	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/ThreadLock.cpp.i
-.PHONY : ThreadLock.cpp.i
-
-ThreadLock.s: ThreadLock.cpp.s
-
-.PHONY : ThreadLock.s
-
-# target to generate assembly for a file
-ThreadLock.cpp.s:
-	$(MAKE) -f CMakeFiles/Flight_Simulator.dir/build.make CMakeFiles/Flight_Simulator.dir/ThreadLock.cpp.s
-.PHONY : ThreadLock.cpp.s
-
 VarCommand.o: VarCommand.cpp.o
 
 .PHONY : VarCommand.o
@@ -783,9 +756,6 @@ help:
 	@echo "... TextFunctions.o"
 	@echo "... TextFunctions.i"
 	@echo "... TextFunctions.s"
-	@echo "... ThreadLock.o"
-	@echo "... ThreadLock.i"
-	@echo "... ThreadLock.s"
 	@echo "... VarCommand.o"
 	@echo "... VarCommand.i"
 	@echo "... VarCommand.s"

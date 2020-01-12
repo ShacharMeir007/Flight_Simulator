@@ -11,7 +11,6 @@ CMakeFiles/Flight_Simulator.dir/AssignCommand.cpp.o: ../SharedData.h
 CMakeFiles/Flight_Simulator.dir/AssignCommand.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/AssignCommand.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/AssignCommand.cpp.o: ../TextFunctions.h
-CMakeFiles/Flight_Simulator.dir/AssignCommand.cpp.o: ../ThreadLock.h
 
 CMakeFiles/Flight_Simulator.dir/Command.cpp.o: ../Command.cpp
 CMakeFiles/Flight_Simulator.dir/Command.cpp.o: ../Command.h
@@ -22,7 +21,6 @@ CMakeFiles/Flight_Simulator.dir/Command.cpp.o: ../SharedData.h
 CMakeFiles/Flight_Simulator.dir/Command.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/Command.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/Command.cpp.o: ../TextFunctions.h
-CMakeFiles/Flight_Simulator.dir/Command.cpp.o: ../ThreadLock.h
 
 CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../AssignCommand.h
 CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../Command.h
@@ -42,7 +40,6 @@ CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../SleepCommand.h
 CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../TextFunctions.h
-CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../ThreadLock.h
 CMakeFiles/Flight_Simulator.dir/CommandMap.cpp.o: ../VarCommand.h
 
 CMakeFiles/Flight_Simulator.dir/ConnectClientCommand.cpp.o: ../Command.h
@@ -56,7 +53,6 @@ CMakeFiles/Flight_Simulator.dir/ConnectClientCommand.cpp.o: ../SharedData.h
 CMakeFiles/Flight_Simulator.dir/ConnectClientCommand.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/ConnectClientCommand.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/ConnectClientCommand.cpp.o: ../TextFunctions.h
-CMakeFiles/Flight_Simulator.dir/ConnectClientCommand.cpp.o: ../ThreadLock.h
 
 CMakeFiles/Flight_Simulator.dir/Expression/Expression.cpp.o: ../Expression/Expression.cpp
 CMakeFiles/Flight_Simulator.dir/Expression/Expression.cpp.o: ../Expression/Expression.h
@@ -90,7 +86,6 @@ CMakeFiles/Flight_Simulator.dir/IfWhileCommand.cpp.o: ../SleepCommand.h
 CMakeFiles/Flight_Simulator.dir/IfWhileCommand.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/IfWhileCommand.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/IfWhileCommand.cpp.o: ../TextFunctions.h
-CMakeFiles/Flight_Simulator.dir/IfWhileCommand.cpp.o: ../ThreadLock.h
 CMakeFiles/Flight_Simulator.dir/IfWhileCommand.cpp.o: ../VarCommand.h
 
 CMakeFiles/Flight_Simulator.dir/Lexer.cpp.o: ../Lexer.cpp
@@ -102,7 +97,6 @@ CMakeFiles/Flight_Simulator.dir/MyClient.cpp.o: ../MyClient.h
 CMakeFiles/Flight_Simulator.dir/MyClient.cpp.o: ../SharedData.h
 CMakeFiles/Flight_Simulator.dir/MyClient.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/MyClient.cpp.o: ../SymbolTable.h
-CMakeFiles/Flight_Simulator.dir/MyClient.cpp.o: ../ThreadLock.h
 
 CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../MyServer.cpp
 CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../MyServer.h
@@ -110,7 +104,6 @@ CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../SharedData.h
 CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../TextFunctions.h
-CMakeFiles/Flight_Simulator.dir/MyServer.cpp.o: ../ThreadLock.h
 
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../Command.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../Expression/Expression.h
@@ -123,7 +116,6 @@ CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../SharedData.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../TextFunctions.h
-CMakeFiles/Flight_Simulator.dir/OpenDataServerCommand.cpp.o: ../ThreadLock.h
 
 CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../AssignCommand.h
 CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../Command.h
@@ -144,7 +136,6 @@ CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../SleepCommand.h
 CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../TextFunctions.h
-CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../ThreadLock.h
 CMakeFiles/Flight_Simulator.dir/Parser.cpp.o: ../VarCommand.h
 
 CMakeFiles/Flight_Simulator.dir/PrintCommand.cpp.o: ../Command.h
@@ -157,13 +148,11 @@ CMakeFiles/Flight_Simulator.dir/PrintCommand.cpp.o: ../SharedData.h
 CMakeFiles/Flight_Simulator.dir/PrintCommand.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/PrintCommand.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/PrintCommand.cpp.o: ../TextFunctions.h
-CMakeFiles/Flight_Simulator.dir/PrintCommand.cpp.o: ../ThreadLock.h
 
 CMakeFiles/Flight_Simulator.dir/SharedData.cpp.o: ../SharedData.cpp
 CMakeFiles/Flight_Simulator.dir/SharedData.cpp.o: ../SharedData.h
 CMakeFiles/Flight_Simulator.dir/SharedData.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/SharedData.cpp.o: ../SymbolTable.h
-CMakeFiles/Flight_Simulator.dir/SharedData.cpp.o: ../ThreadLock.h
 
 CMakeFiles/Flight_Simulator.dir/SleepCommand.cpp.o: ../Command.h
 CMakeFiles/Flight_Simulator.dir/SleepCommand.cpp.o: ../Expression/Expression.h
@@ -175,7 +164,6 @@ CMakeFiles/Flight_Simulator.dir/SleepCommand.cpp.o: ../SleepCommand.h
 CMakeFiles/Flight_Simulator.dir/SleepCommand.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/SleepCommand.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/SleepCommand.cpp.o: ../TextFunctions.h
-CMakeFiles/Flight_Simulator.dir/SleepCommand.cpp.o: ../ThreadLock.h
 
 CMakeFiles/Flight_Simulator.dir/Symbol.cpp.o: ../Symbol.cpp
 CMakeFiles/Flight_Simulator.dir/Symbol.cpp.o: ../Symbol.h
@@ -187,9 +175,6 @@ CMakeFiles/Flight_Simulator.dir/SymbolTable.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/TextFunctions.cpp.o: ../TextFunctions.cpp
 CMakeFiles/Flight_Simulator.dir/TextFunctions.cpp.o: ../TextFunctions.h
 
-CMakeFiles/Flight_Simulator.dir/ThreadLock.cpp.o: ../ThreadLock.cpp
-CMakeFiles/Flight_Simulator.dir/ThreadLock.cpp.o: ../ThreadLock.h
-
 CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o: ../Command.h
 CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o: ../Expression/Expression.h
 CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o: ../Expression/Interpreter.h
@@ -198,7 +183,6 @@ CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o: ../SharedData.h
 CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o: ../TextFunctions.h
-CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o: ../ThreadLock.h
 CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o: ../VarCommand.cpp
 CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o: ../VarCommand.h
 
@@ -221,7 +205,6 @@ CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../SleepCommand.h
 CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../Symbol.h
 CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../SymbolTable.h
 CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../TextFunctions.h
-CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../ThreadLock.h
 CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../VarCommand.h
 CMakeFiles/Flight_Simulator.dir/main.cpp.o: ../main.cpp
 

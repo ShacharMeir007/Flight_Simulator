@@ -15,11 +15,12 @@ void AssignCommand::execute(std::vector<std::string> &args) {
   Expression* expression1 = this->interpreter_->interpret(expression.c_str());
     double new_val = expression1->calculate();
     this->shared_data->safe_changeValue(var_name, new_val);
+    //adding the assigned var to the list of changed variables
     auto right_bind = this->shared_data->safe_getVarsRightBind();
     auto changed_vars = this->shared_data->safe_getChangedVars();
-    for (auto& pair: *right_bind) {
+    for (auto& pair: right_bind) {
       if (is_in_vector(var_name, right_bind) &&!is_in_vector(var_name, changed_vars)){
-        std::string sim = this->shared_data->safe_getSymbolTable()->get(var_name).GetSim();
+        std::string sim = this->shared_data->safe_getSim(var_name);
         std::pair<std::string, std::string> p(var_name, sim);
         this->shared_data->safe_add_to_change(p);
       }
@@ -32,8 +33,8 @@ void AssignCommand::execute(std::vector<std::string> &args) {
 int AssignCommand::numArg() {
   return 2;
 }
-bool AssignCommand::is_in_vector(std::string var_name,std::vector<std::pair<std::string, std::string>>* vector){
-  for (auto& pair: *vector) {
+bool AssignCommand::is_in_vector(std::string var_name,std::vector<std::pair<std::string, std::string>> vector){
+  for (auto& pair: vector) {
     if (var_name == pair.first){
       return true;
     }

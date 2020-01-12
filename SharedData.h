@@ -6,8 +6,8 @@
 #define FLIGHT_SIMULATOR__SHAREDDATA_H_
 #include <vector>
 #include <string>
+#include <mutex>
 #include "SymbolTable.h"
-#include "ThreadLock.h"
 //This class is for shared data the thread might need.
 //Every time you need to share data between threads you'll use
 //this class.
@@ -18,20 +18,32 @@ class SharedData {
   std::vector<std::pair<std::string, std::string>>* vars_changed = nullptr;
   std::vector<std::string>* vars = nullptr;
   SymbolTable* symbol_table_ = nullptr;
+  bool terminate = false;
+  bool terminated = false;
  public:
-  std::condition_variable server_connected;
-  std::vector<std::string> *safe_getVars();
-  SymbolTable *safe_getSymbolTable();
-  std::mutex mut;
+
+  std::vector<std::string> safe_getVars();
+  //SymbolTable *safe_getSymbolTable();
+  std::recursive_mutex mut;
   SharedData();
   virtual ~SharedData();
   void safe_changeValue(std::string &name, double value);
   void safe_add_to_change(std::pair<std::string, std::string>&);
+  void safe_add_to_right(std::pair<std::string, std::string>&);
+  void safe_add_to_left(std::pair<std::string, std::string>&);
   double safe_getValue(std::string &name);
+  std::vector<std::pair<std::string, std::string>> safe_getVarsRightBind();
+  std::vector<std::pair<std::string, std::string>> safe_getVarsLeftBind();
+  std::vector<std::pair<std::string, std::string>> safe_getChangedVars();
 
-  std::vector<std::pair<std::string, std::string>> *safe_getVarsRightBind();
-  std::vector<std::pair<std::string, std::string>> *safe_getVarsLeftBind();
-  std::vector<std::pair<std::string, std::string>> *safe_getChangedVars();
+  bool checkTerminate();
+  bool checkTerminated();
+
+  void setTerminate();
+  void setTerminated();
+  void safe_addSymbol(std::string &name, Symbol &symbol);
+  void safe_add_to_vars(std::string &var_name);
+  std::string safe_getSim(std::string &name);
 };
 
 #endif //FLIGHT_SIMULATOR__SHAREDDATA_H_

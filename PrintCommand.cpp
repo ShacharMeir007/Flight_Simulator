@@ -12,8 +12,7 @@ void PrintCommand::execute(std::vector<std::string> &args) {
     remove_quotation(msg);
     std::cout<<msg<<std::endl;
   } else{
-    auto table = shared_data->safe_getSymbolTable();
-    double val = table->get(args[0]).GetValue();
+    double val = shared_data->safe_getValue(args[0]);
     std::cout<<val<<std::endl;
   }
 }

@@ -89,27 +89,35 @@ void runDataServer(int client_socket, SharedData* data)
 
   //reading from client
   while (true) {
+    if(data->checkTerminate()){
+      break;
+    }
     char buffer[1024] = {0};
     read(client_socket, buffer, 1024);
     std::string buff(buffer);
     std::vector<std::string> str_values = split(',',buff);
     std::vector<double> _values = convert_to_double(str_values);
     insert_values_to_map(map, _values);
-    std::vector<std::pair<std::string,std::string>>* bind_vars = data->safe_getVarsLeftBind();
-    for (std::pair<std::string,std::string> pair: *bind_vars){
+    std::vector<std::pair<std::string,std::string>> bind_vars = data->safe_getVarsLeftBind();
+    for (std::pair<std::string,std::string> pair: bind_vars){
       double new_val = map.at(pair.second);
       data->safe_changeValue(pair.first, new_val);
     }
     std::cout << buffer << std::endl;
   }
-
-
+  close(client_socket);
+  data->setTerminated();
 }
 std::vector<double> convert_to_double(std::vector<std::string>& vector){
   std::vector<double> doubles;
   for (std::string& s: vector){
-    double value = std::stod(s);
-    doubles.push_back(value);
+    try {
+      double value = std::stod(s);
+      doubles.push_back(value);
+    } catch (std::invalid_argument&){
+      std::cerr<<"not reliable information"<<std::endl;
+    }
+
   }
   return doubles;
 }

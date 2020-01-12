@@ -5,15 +5,12 @@
 #include "Command.h"
 
 void Command::initInterpreterVar() {
-  std::vector<std::string>* var_list = this->shared_data->safe_getVars();
-  SymbolTable* table = this->shared_data->safe_getSymbolTable();
-  setVariablesFromVector(var_list, table);
-
+  std::vector<std::string> var_list = this->shared_data->safe_getVars();
+  setVariablesFromVector(var_list);
 }
-void Command::setVariablesFromVector(std::vector<std::string> * vector,
-                                          SymbolTable* table) {
-  for (std::string& s : *vector){
-    double value = table->get(s).GetValue();
+void Command::setVariablesFromVector(std::vector<std::string>  vector) {
+  for (std::string& s : vector){
+    double value = shared_data->safe_getValue(s);
     std::string var_str = s+"="+std::to_string(value);
     this->interpreter_->setVariables(var_str.c_str());
   }

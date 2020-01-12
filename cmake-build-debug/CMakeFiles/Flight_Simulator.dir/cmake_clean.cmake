@@ -18,7 +18,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Flight_Simulator.dir/Symbol.cpp.o"
   "CMakeFiles/Flight_Simulator.dir/SymbolTable.cpp.o"
   "CMakeFiles/Flight_Simulator.dir/TextFunctions.cpp.o"
-  "CMakeFiles/Flight_Simulator.dir/ThreadLock.cpp.o"
   "CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o"
   "CMakeFiles/Flight_Simulator.dir/main.cpp.o"
   "Flight_Simulator"

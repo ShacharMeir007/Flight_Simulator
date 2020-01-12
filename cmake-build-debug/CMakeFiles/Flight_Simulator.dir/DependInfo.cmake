@@ -23,7 +23,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/shacharmeir/CLionProjects/Flight Simulator/Symbol.cpp" "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/Symbol.cpp.o"
   "/Users/shacharmeir/CLionProjects/Flight Simulator/SymbolTable.cpp" "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/SymbolTable.cpp.o"
   "/Users/shacharmeir/CLionProjects/Flight Simulator/TextFunctions.cpp" "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/TextFunctions.cpp.o"
-  "/Users/shacharmeir/CLionProjects/Flight Simulator/ThreadLock.cpp" "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/ThreadLock.cpp.o"
   "/Users/shacharmeir/CLionProjects/Flight Simulator/VarCommand.cpp" "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/VarCommand.cpp.o"
   "/Users/shacharmeir/CLionProjects/Flight Simulator/main.cpp" "/Users/shacharmeir/CLionProjects/Flight Simulator/cmake-build-debug/CMakeFiles/Flight_Simulator.dir/main.cpp.o"
   )

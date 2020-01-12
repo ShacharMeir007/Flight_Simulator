@@ -7,6 +7,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <sstream>
 #include "TextFunctions.h"
 #include "SharedData.h"
 #include "Expression/ex1.h"
@@ -16,7 +17,7 @@ class Command {
   Interpreter* interpreter_;
   SharedData* shared_data;
   void initInterpreterVar();
-  void setVariablesFromVector(vector<std::string> *vector, SymbolTable *table);
+  void setVariablesFromVector(vector<std::string> vector);
  public:
   Command(SharedData*, Interpreter*);
 virtual void execute(std::vector<std::string>& args) = 0;

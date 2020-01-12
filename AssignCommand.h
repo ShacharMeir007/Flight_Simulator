@@ -7,7 +7,8 @@
 #include "Command.h"
 #include <algorithm>
 class AssignCommand: public Command {
-  bool is_in_vector(string var_name, vector<std::pair<std::string, std::string>> *vector);
+  //check if a variable is in a list of pairs
+  bool is_in_vector(string var_name, vector<std::pair<std::string, std::string>> vector);
  public:
   void execute(std::vector<std::string> &args) override;
 

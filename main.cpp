@@ -16,7 +16,8 @@ int main(int argc, char* argv[]) {
     std::cout<<exception<<std::endl;
     return 1;
   }
-
+  shared_data->setTerminate();
+  while (!shared_data->checkTerminated()){}
   return 0;
 }
 

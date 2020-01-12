@@ -86,9 +86,6 @@
 		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/AssignCommand.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
-		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/BindDirection.h">
-			<Option target="Flight_Simulator"/>
-		</Unit>
 		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/Command.cpp">
 			<Option target="Flight_Simulator"/>
 		</Unit>
@@ -195,12 +192,6 @@
 			<Option target="Flight_Simulator"/>
 		</Unit>
 		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/TextFunctions.h">
-			<Option target="Flight_Simulator"/>
-		</Unit>
-		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/ThreadLock.cpp">
-			<Option target="Flight_Simulator"/>
-		</Unit>
-		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/ThreadLock.h">
 			<Option target="Flight_Simulator"/>
 		</Unit>
 		<Unit filename="/Users/shacharmeir/CLionProjects/Flight Simulator/VarCommand.cpp">

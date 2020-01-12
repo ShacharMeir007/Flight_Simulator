@@ -10,42 +10,30 @@ void VarCommand::execute(std::vector<std::string> &args) {
   std::string var_name = args[0];
   std::string bind = args[1];
   std::string sim = args[2];
-  SymbolTable* symbol_table = this->shared_data->safe_getSymbolTable();
   this->initInterpreterVar();
   if(bind == "="){
     Expression* e = this->interpreter_->interpret(sim.c_str());
     double value = e->calculate();
     Symbol symbol(value, "");
-    symbol_table->add(var_name, symbol);
+    shared_data->safe_addSymbol(var_name, symbol);
   } else {
     Symbol symbol(0, sim);
-    symbol_table->add(var_name, symbol);
+    shared_data->safe_addSymbol(var_name, symbol);
+
     if (bind == "->") {
-      std::vector<std::pair<std::string,std::string>>* right_bind = this->shared_data->safe_getVarsRightBind();
-      if (right_bind) {
-        std::pair<std::string,std::string> pair(var_name,sim);
-        right_bind->push_back(pair);
-      } else {
-        throw "right bind vector was not initialized";
-      }
+      std::vector<std::pair<std::string,std::string>> right_bind = this->shared_data->safe_getVarsRightBind();
+      std::pair<std::string,std::string> pair(var_name,sim);
+      shared_data->safe_add_to_right(pair);
+      //check
     } else if (bind == "<-") {
-      std::vector<std::pair<std::string,std::string>> *left_bind = this->shared_data->safe_getVarsLeftBind();
-      if (left_bind) {
+      std::vector<std::pair<std::string,std::string>> left_bind = this->shared_data->safe_getVarsLeftBind();
         std::pair<std::string,std::string> pair(var_name,sim);
-        left_bind->push_back(pair);
-      } else {
-        throw "left bind vector was not initialized";
-      }
+      shared_data->safe_add_to_left(pair);
     } else {
       throw "couldn't find bind type";
     }
   }
-  std::vector<std::string>* vars = this->shared_data->safe_getVars();
-  if (vars){
-    vars->push_back(var_name);
-  } else {
-    throw "right bind vector was not initialized";
-  }
+  shared_data->safe_add_to_vars(var_name);
 }
 VarCommand::VarCommand(SharedData *p_data, Interpreter *p_interpreter) : Command(p_data, p_interpreter) {
 

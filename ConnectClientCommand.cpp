@@ -10,9 +10,11 @@ void ConnectClientCommand::execute(std::vector<std::string> &args) {
   std::string addr = args[0];
   std::string port_str = args[1];
   remove_quotation(addr);
-  std::stringstream geek(port_str);
+  //converting port to int
+  std::stringstream stream(port_str);
   int port = 0;
-  geek>>port;
+  stream >> port;
+  //runs Client on new thread
   connectMyClient(port, addr, this->shared_data);
 }
 int ConnectClientCommand::numArg() {

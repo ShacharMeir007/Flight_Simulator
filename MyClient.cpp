@@ -3,6 +3,7 @@
 //
 
 // Client side C/C++ program to demonstrate Socket programming
+
 #include "MyClient.h"
 void runClient(int port, std::string addr, SharedData* shared_data)
 {
@@ -29,9 +30,12 @@ void runClient(int port, std::string addr, SharedData* shared_data)
     std::cout<<"Client is now connected to server" <<std::endl;
   }
   //if here we made a connection
-  while(true) {
+  while (true) {
+    if(shared_data->checkTerminate()){
+      break;
+    }
     auto bind_vars = shared_data->safe_getChangedVars();
-    for (auto pair: *bind_vars) {
+    for (auto pair: bind_vars) {
       std::string message;
       double val = shared_data->safe_getValue(pair.first);
       message += "set";
@@ -40,15 +44,12 @@ void runClient(int port, std::string addr, SharedData* shared_data)
       int is_sent = send(client_socket, message.c_str(), message.size(), 0);
       if (is_sent == -1) {
         std::cout << "Error sending message" << std::endl;
-      } /*else {
-        std::cout << pair.first<<" updated" << std::endl;
-      }*/
-
+      }
     }
   }
 
-
   close(client_socket);
+  shared_data->setTerminated();
 
 }
 void connectMyClient(int port, std::string addr, SharedData* shared_data) {
