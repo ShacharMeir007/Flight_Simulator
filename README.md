@@ -24,4 +24,4 @@ then run: ./a.out file.txt \
 file.txt should be the file of commands
 for the simulator \
 github:
-https://github.com/ShacharMeir007/Flight_Simulator.git
+https://github.com/ShacharMeir007/Flight_Simulator
