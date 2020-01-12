@@ -150,9 +150,9 @@ bool isLogicOperator(std::string &str) {
   return false;
 }
 
-void makeConditionBetSpaces(std::string s) {
+void makeConditionBetSpaces(std::string& s) {
   size_t found;
-  found = s.find("<");
+  found = s.find('<');
   if (found != std::string::npos) {
     if (s[found + 1] != '-') {
       if (s[found - 1] != ' ') {
@@ -172,7 +172,7 @@ void makeConditionBetSpaces(std::string s) {
       s.insert(found + 2, " ");
     }
   }
-  found = s.find(">");
+  found = s.find('>');
   if (found != std::string::npos) {
     if (s[found - 1] != '-') {
       if (s[found - 1] != ' ') {
@@ -210,7 +210,7 @@ void makeConditionBetSpaces(std::string s) {
       s.insert(found + 2, " ");
     }
   }
-  found = s.find("=");
+  found = s.find('=');
   if (found != std::string::npos) {
     if (s[found - 1] != '>' && s[found - 1] != '<' && s[found - 1] != '=' && s[found - 1] != '!' && s[found - 1] != ' ') {
       s.insert(found, " ");

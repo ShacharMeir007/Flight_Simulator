@@ -48,6 +48,7 @@ std::vector<std::string> Lexer::lex() {
       replace(')',"",line);
       replace(','," ", line);
     }
+    makeConditionBetSpaces(line);
     //spacen(line);
     remove_redundant_signs(line);
     std::vector<std::string> vector = split(' ', line);
@@ -61,7 +62,7 @@ std::vector<std::string> Lexer::lex() {
     //handleQuotation(vector);
     this->copyCommands(vector);
   }
-  //this->printVector(this->commends);
+  this->printVector(this->commends);
   return this->commends;
 }
 //handle functions
