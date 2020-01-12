@@ -31,7 +31,7 @@ UnaryExpression::~UnaryExpression() {
 }
 
 //Variable
-Variable::Variable(const string& name, double value) {
+Variable::Variable(const std::string& name, double value) {
 
   this->name = name;
   this->value = value;
@@ -67,12 +67,12 @@ Variable::~Variable(){
 
 }
 
-string Variable::getName() const {
+std::string Variable::getName() const {
   return name;
 }
 
-void Variable::setValue(double value) {
-  Variable::value = value;
+void Variable::setValue(double new_value) {
+  Variable::value = new_value;
 }
 
 //Value

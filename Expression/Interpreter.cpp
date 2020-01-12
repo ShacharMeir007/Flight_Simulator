@@ -10,12 +10,12 @@
 
 Expression *Interpreter::interpret(const char * in) {
 
-  string input(in);
-  queue<string> postfix = shunting_yard(input);
-  stack<Expression*> exp_stack;
+  std::string input(in);
+  std::queue<std::string> postfix = shunting_yard(input);
+  std::stack<Expression*> exp_stack;
   //cout<<endl;
   while (!postfix.empty()){
-    string fr = postfix.front();
+    std::string fr = postfix.front();
     //cout<<"pulled :"<<fr<<endl;
     if (isNumber(fr)){
       exp_stack.push(new Value(std::stod(fr)));
@@ -46,10 +46,10 @@ Expression *Interpreter::interpret(const char * in) {
 }
 
 void Interpreter::setVariables(const char * input) {
-  string s(input);
+  std::string s(input);
   bool isname = true;
-  string name;
-  string val;
+  std::string name;
+  std::string val;
   for(char& c : s) {
     if (isname) {
       if(c != '=') {
@@ -74,7 +74,7 @@ void Interpreter::setVariables(const char * input) {
   }
 }
 
-void Interpreter::addToVarMap(const string& name, const string& val) {
+void Interpreter::addToVarMap(const std::string& name, const std::string& val) {
 //add to list
   if (!Interpreter::isNumber(val)){
     throw "this is not a valid number";
@@ -87,17 +87,17 @@ void Interpreter::addToVarMap(const string& name, const string& val) {
   double value = stod(val);
 
   if (this->varMap.find(name) == this->varMap.end()) {
-    this->varMap.insert(pair<string,double >(name,value));
+    this->varMap.insert(std::pair<std::string,double >(name,value));
   } else {
     this->varMap.find(name)->second = value;
   }
 }
-bool Interpreter::isNumber(const string& s){
+bool Interpreter::isNumber(const std::string& s){
   std::regex number("^(-?)(0|([1-9][0-9]*))(\\.[0-9]+)?$");
   return std::regex_match(s, number);
 }
 
-bool Interpreter::is_valid_name(const string& s){
+bool Interpreter::is_valid_name(const std::string& s){
   std::regex name("([a-z|A-Z]|_)(\\d|[a-z|A-Z]|_)*");
   return std::regex_match(s, name);
 }
@@ -106,16 +106,16 @@ Interpreter::Interpreter() {
 
 }
 
-queue<string> Interpreter::shunting_yard(const string& input) {
-  const string operators[] = {"*", "/", "+", "-"};
+std::queue<std::string> Interpreter::shunting_yard(const std::string& input) {
+  const std::string operators[] = {"*", "/", "+", "-"};
   bool is_unary = true;
   bool last_operator = false;
-  queue <string> numbers_queue;
-  stack <char> operators_stack;
-  string number;
+  std::queue <std::string> numbers_queue;
+  std::stack <char> operators_stack;
+  std::string number;
   // looping through the characters
   for(const char c : input){
-    string s;
+    std::string s;
     s+= c;
     if (is_operator(s)) {
 
@@ -148,7 +148,7 @@ queue<string> Interpreter::shunting_yard(const string& input) {
         last_operator = true;
         while (!operators_stack.empty()) {
           if (operators_stack.top() != '(') {
-            numbers_queue.push(string(1, operators_stack.top()));
+            numbers_queue.push(std::string(1, operators_stack.top()));
             //cout<<operators_stack.top()<<endl;
             operators_stack.pop();
           } else{
@@ -161,7 +161,7 @@ queue<string> Interpreter::shunting_yard(const string& input) {
         while (!operators_stack.empty()) {
           if (precedence(c, is_unary) < precedence(operators_stack.top())) {
             //moving the smaller precedence operator to the number queue
-            numbers_queue.push(string(1, operators_stack.top()));
+            numbers_queue.push(std::string(1, operators_stack.top()));
             //cout << operators_stack.top() << endl;
             operators_stack.pop();
           } else {
@@ -209,23 +209,23 @@ queue<string> Interpreter::shunting_yard(const string& input) {
     }
   }
   while (!operators_stack.empty()){
-    numbers_queue.push(string(1,operators_stack.top()));
+    numbers_queue.push(std::string(1,operators_stack.top()));
     operators_stack.pop();
   }
   return numbers_queue;
 }
-bool Interpreter::is_operator(const string& c) {
-  const string operators[] = {"+","-","*","/","(",")"};
-  queue <string> numbers_queue;
-  stack <char> operators_stack;
-  for(const string& op: operators){
+bool Interpreter::is_operator(const std::string& c) {
+  const std::string operators[] = {"+","-","*","/","(",")"};
+  std::queue <std::string> numbers_queue;
+  std::stack <char> operators_stack;
+  for(const std::string& op: operators){
     if (c == op){
       return true;
     }
   }
   return false;
 }
-Expression *Interpreter::ActivateOper(Expression *left_expression, Expression *right_expression, string& oper) {
+Expression *Interpreter::ActivateOper(Expression *left_expression, Expression *right_expression, std::string& oper) {
   if(oper == "+") {
     return new Plus(left_expression, right_expression);
   } else if(oper == "-") {
@@ -268,18 +268,18 @@ int Interpreter::precedence(const char & c, bool is_unary) {
     default:return 3;
   }
 }
-bool Interpreter::is_Unary_operator(string& c) {
-  const string operators[] = {"!","@"};
-  queue <string> numbers_queue;
-  stack <char> operators_stack;
-  for(const string& op: operators){
+bool Interpreter::is_Unary_operator(std::string& c) {
+  const std::string operators[] = {"!","@"};
+  std::queue <std::string> numbers_queue;
+  std::stack <char> operators_stack;
+  for(const std::string& op: operators){
     if (c == op){
       return true;
     }
   }
   return false;
 }
-Expression *Interpreter::ActivateUnaryOper(Expression *expression, string oper) {
+Expression *Interpreter::ActivateUnaryOper(Expression *expression, std::string oper) {
   if(oper == "@") {
     return new UPlus(expression);
   } else if(oper == "!") {

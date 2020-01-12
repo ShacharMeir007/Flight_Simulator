@@ -23,12 +23,10 @@ void AssignCommand::execute(std::vector<std::string> &args) {
     //for the client to update the simulator's settings
     auto right_bind = this->shared_data->safe_getVarsRightBind();
     auto changed_vars = this->shared_data->safe_getChangedVars();
-    for (auto& pair: right_bind) {
-      if (is_in_vector(var_name, right_bind) &&!is_in_vector(var_name, changed_vars)){
-        std::string sim = this->shared_data->safe_getSim(var_name);
-        std::pair<std::string, std::string> p(var_name, sim);
-        this->shared_data->safe_add_to_change(p);
-      }
+    if (is_in_vector(var_name, right_bind) &&!is_in_vector(var_name, changed_vars)){
+      std::string sim = this->shared_data->safe_getSim(var_name);
+      std::pair<std::string, std::string> p(var_name, sim);
+      this->shared_data->safe_add_to_change(p);
     }
   } catch (const char* p){
     std::cout<<p<<std::endl;

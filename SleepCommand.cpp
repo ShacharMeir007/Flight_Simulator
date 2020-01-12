@@ -14,9 +14,9 @@ void SleepCommand::execute(std::vector<std::string> &args) {
   //converts time to int
   double val = this->evaluate_expression(str_milliseconds_exp);
   int milliseconds = int(val);
-  std::cout<<"now sleeping for "<<milliseconds<<std::endl;
+
   std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
-  std::cout<<"I'm awake now"<<std::endl;
+
 }
 int SleepCommand::numArg() {
   return 1;

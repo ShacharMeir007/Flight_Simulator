@@ -25,7 +25,7 @@ virtual void execute(std::vector<std::string>& args) = 0;
 // returns number of arguments the command requires
 virtual int numArg() = 0;
 virtual ~Command()= default;;
-  double evaluate_expression(string &exp);
+  double evaluate_expression(std::string &exp);
 };
 
 #endif //FLIGHT_SIMULATOR__COMMAND_H_

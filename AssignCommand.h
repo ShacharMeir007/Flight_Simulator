@@ -8,7 +8,7 @@
 #include <algorithm>
 class AssignCommand: public Command {
   //checks if a variable is in a list of pairs
-  bool is_in_vector(string var_name, vector<std::pair<std::string, std::string>> vector);
+  bool is_in_vector(std::string var_name, std::vector<std::pair<std::string, std::string>> vector);
  public:
   void execute(std::vector<std::string> &args) override;
 

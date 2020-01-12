@@ -139,34 +139,26 @@ bool isLogicOperator(std::string &str) {
 
 void makeConditionBetSpaces(std::string& s) {
   size_t found;
-  found = s.find('<');
-  if (found != std::string::npos) {
-    if (s[found + 1] != '-') {
-      if (s[found - 1] != ' ') {
-        s.insert(found, " ");
-      }
-      if (s[found + 1] != ' ') {
-        s.insert(found + 1, " ");
-      }
-    }
-  }
   found = s.find("<=");
   if (found != std::string::npos) {
     if (s[found - 1] != ' ') {
       s.insert(found, " ");
+      found++;
     }
     if (s[found + 2] != ' ') {
       s.insert(found + 2, " ");
     }
-  }
-  found = s.find('>');
-  if (found != std::string::npos) {
-    if (s[found - 1] != '-') {
-      if (s[found - 1] != ' ') {
-        s.insert(found, " ");
-      }
-      if (s[found + 1] != ' ') {
-        s.insert(found + 1, " ");
+  } else {
+    found = s.find('<');
+    if (found != std::string::npos) {
+      if (s[found + 1] != '-') {
+        if (s[found - 1] != ' ') {
+          s.insert(found, " ");
+          found++;
+        }
+        if (s[found + 1] != ' ') {
+          s.insert(found + 1, " ");
+        }
       }
     }
   }
@@ -174,15 +166,31 @@ void makeConditionBetSpaces(std::string& s) {
   if (found != std::string::npos) {
     if (s[found - 1] != ' ') {
       s.insert(found, " ");
+      found++;
     }
     if (s[found + 2] != ' ') {
       s.insert(found + 2, " ");
     }
+  } else{
+    found = s.find('>');
+    if (found != std::string::npos) {
+      if (s[found - 1] != '-') {
+        if (s[found - 1] != ' ') {
+          s.insert(found, " ");
+          found++;
+        }
+        if (s[found + 1] != ' ') {
+          s.insert(found + 1, " ");
+        }
+      }
+    }
   }
+
   found = s.find("==");
   if (found != std::string::npos) {
     if (s[found - 1] != ' ') {
       s.insert(found, " ");
+      found++;
     }
     if (s[found + 2] != ' ') {
       s.insert(found + 2, " ");
@@ -192,20 +200,24 @@ void makeConditionBetSpaces(std::string& s) {
   if (found != std::string::npos) {
     if (s[found - 1] != ' ') {
       s.insert(found, " ");
+      found++;
     }
     if (s[found + 2] != ' ') {
       s.insert(found + 2, " ");
     }
-  }
-  found = s.find('=');
-  if (found != std::string::npos) {
-    if (s[found - 1] != '>' && s[found - 1] != '<' && s[found - 1] != '=' && s[found - 1] != '!' && s[found - 1] != ' ') {
-      s.insert(found, " ");
+  } else {
+    found = s.find('=');
+    if (found != std::string::npos) {
+      if (s[found - 1] != '>' && s[found - 1] != '<' && s[found - 1] != '=' && s[found - 1] != '!' && s[found - 1] != ' ') {
+        s.insert(found, " ");
+        found++;
+      }
+      if (s[found + 1] != '=' && s[found + 1] != ' ') {
+        s.insert(found+1, " ");
+      }
     }
-    if (s[found + 1] != '=' && s[found - 1] != ' ') {
-      s.insert(found, " ");
-    }
   }
+
 }
 bool isOpenDataServer(std::string &str) {
 

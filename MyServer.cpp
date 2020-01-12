@@ -111,7 +111,6 @@ void runDataServer(int client_socket, SharedData* data)
       double new_val = map.at(pair.second);
       data->safe_changeValue(pair.first, new_val);
     }
-    std::cout << buffer << std::endl;
   }
   //closes and notifies that the server is terminated
   close(client_socket);
