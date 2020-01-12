@@ -14,6 +14,7 @@ class Symbol {
   const std::string &GetSim() const;
   void SetSim(const std::string &);
  private:
+  // data of a variable
   double value;
   std::string sim;
 };

@@ -26,7 +26,15 @@ void replace(const char token1,const std::string & token2, std::string& str){
   }
   str = tmp;
 }
-
+void remove_spaces(std::string& str){
+  std::string res;
+  for (char& c: str) {
+    if (c != ' '){
+      res+=c;
+    }
+  }
+  str =res;
+}
 void remove_redundant_signs(std::string& str){
   std::string tmp;
   bool space_mode = false;
@@ -55,27 +63,6 @@ void remove_quotation(std::string& str){
     }
   }
   str = tmp;
-}
-void spacen(std::string& str){
-  char signs[]= {'!','='};
-
-  std::string tmp;
-  for (char c: str){
-    bool is_sign = false;
-    for(char p: signs){
-      if (c == p){
-        is_sign = true;
-      }
-    }
-    if (is_sign){
-      tmp+="  ";
-      tmp+=c;
-      tmp+="  ";
-    } else {
-      tmp+= c;
-    }
-  }
-  str =tmp;
 }
 std::vector<std::string> split(const char token, std::string& str) {
   std::vector<std::string> vector;
@@ -219,4 +206,17 @@ void makeConditionBetSpaces(std::string& s) {
       s.insert(found, " ");
     }
   }
+}
+bool isOpenDataServer(std::string &str) {
+
+  return str.substr(0,14) =="openDataServer";
+}
+bool isConnectControlClient(std::string &str) {
+  return str.substr(0,20) =="connectControlClient";
+}
+bool isPrint(std::string &str) {
+  return str.substr(0,5) =="Print";
+}
+bool isSleep(std::string &str) {
+  return str.substr(0,5) =="Sleep";
 }

@@ -12,6 +12,8 @@
 #include <arpa/inet.h>
 #include "SharedData.h"
 #include <thread>
+// client function
 void runClient(int port, std::string addr, SharedData* shared_data);
+// runs new thread with client function
 void connectMyClient(int port, std::string addr, SharedData* shared_data);
 #endif //FLIGHT_SIMULATOR__MYCLIENT_H_

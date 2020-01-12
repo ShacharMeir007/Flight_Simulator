@@ -13,10 +13,10 @@ int receiveConnection(int port){
   }
 
   //bind socket to IP address
-  // we first need to create the sockaddr obj.
-  sockaddr_in address; //in means IP4
+
+  sockaddr_in address;
   address.sin_family = AF_INET;
-  address.sin_addr.s_addr = INADDR_ANY; //give me any IP allocated for my machine
+  address.sin_addr.s_addr = INADDR_ANY;
   address.sin_port = htons(port);
   //we need to convert our number
   // to a number that the network understands.
@@ -29,7 +29,7 @@ int receiveConnection(int port){
   }
 
   //making socket listen to the port
-  if (listen(socketfd, 5) == -1) { //can also set to SOMAXCON (max connections)
+  if (listen(socketfd, 5) == -1) {
     std::cerr<<"Error during listening command"<<std::endl;
   } else{
     std::cout<<"Server is now listening ..."<<std::endl;
@@ -48,6 +48,7 @@ int receiveConnection(int port){
 }
 void runDataServer(int client_socket, SharedData* data)
 {
+  //creates and initialize configurations table to read
   std::map<std::string, double > map;
   map["/instrumentation/airspeed-indicator/indicated-speed-kt"] = 0;
   map["/sim/time/warp"] = 0;
@@ -89,15 +90,22 @@ void runDataServer(int client_socket, SharedData* data)
 
   //reading from client
   while (true) {
+    //checks break condition
     if(data->checkTerminate()){
       break;
     }
+    //creates buffer and reads to it
     char buffer[1024] = {0};
     read(client_socket, buffer, 1024);
+    //converts to string
     std::string buff(buffer);
+    //separates to a vector of string values
     std::vector<std::string> str_values = split(',',buff);
+    // converting values from string to double
     std::vector<double> _values = convert_to_double(str_values);
+    //inserts to the table from above
     insert_values_to_map(map, _values);
+    //updates the variables associated with properties
     std::vector<std::pair<std::string,std::string>> bind_vars = data->safe_getVarsLeftBind();
     for (std::pair<std::string,std::string> pair: bind_vars){
       double new_val = map.at(pair.second);
@@ -105,6 +113,7 @@ void runDataServer(int client_socket, SharedData* data)
     }
     std::cout << buffer << std::endl;
   }
+  //closes and notifies that the server is terminated
   close(client_socket);
   data->setTerminated();
 }
@@ -158,7 +167,4 @@ void insert_values_to_map(std::map<std::string,double>& map, std::vector<double 
   map["/controls/switches/master-bat"] = values[33];
   map["/controls/switches/master-alt"] = values[34];
   map["/engines/engine/rpm"] = values[35];
-}
-void openDataServer(int port, SharedData* shared_data){
-
 }

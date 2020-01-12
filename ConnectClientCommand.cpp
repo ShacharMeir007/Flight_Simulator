@@ -7,13 +7,14 @@ void ConnectClientCommand::execute(std::vector<std::string> &args) {
   if ((int) args.size() != numArg()){
     throw "Not amount of arguments required";
   }
+  // sets arguments
   std::string addr = args[0];
-  std::string port_str = args[1];
+  std::string port_str_exp = args[1];
+  // remove " " marks from addr
   remove_quotation(addr);
   //converting port to int
-  std::stringstream stream(port_str);
-  int port = 0;
-  stream >> port;
+  double val = this->evaluate_expression(port_str_exp);
+  int port = int(val);
   //runs Client on new thread
   connectMyClient(port, addr, this->shared_data);
 }

@@ -7,11 +7,16 @@ Parser::Parser(SharedData* data) {
   this->data = data;
 }
 void Parser::parse(std::vector<std::string> * string_commands_) {
+  //sets initial data used
   Interpreter* interpreter = new Interpreter();
   int size = string_commands_->size(), index = 0, numArgs;
+  //creates commandMap
   CommandMap cm = CommandMap(data,interpreter);
   Command *c;
   std::vector<std::string> *args;
+  //gets command
+  //construct string arguments vector
+  //and run command
   while (index < size) {
     c = cm.getCommand(string_commands_->at(index));
     if (!c){

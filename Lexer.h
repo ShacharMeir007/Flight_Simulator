@@ -19,6 +19,8 @@ class Lexer {
   //private methods
   //text methods
   //vector methods
+  //used to insert string commends into
+  // the final vector of this lexer
   void copyCommands(const std::vector<std::string>& vector);
   void printVector(std::vector<std::string> vector);
   //file methods
@@ -33,6 +35,9 @@ class Lexer {
   void handleCondition(std::vector<std::string>& vector);
   void handleQuotation(std::vector<std::string>& vector);
   void handleAssign(std::vector<std::string> &vector);
+  void handleDataServer(std::string &str);
+  void handleConnectClient(std::string& std);
+  void handlePrint(std::string &str);
 };
 
 #endif //FLIGHT_SIMULATOR__LEXER_H_

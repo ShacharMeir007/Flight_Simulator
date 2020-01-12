@@ -12,6 +12,7 @@ class SymbolTable {
   Symbol& get(std::string& str);
   void add (std::string&, Symbol);
  private:
+  //map of symbols tide to variables
   std::map<std::string, Symbol> table;
 
 };

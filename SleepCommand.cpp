@@ -9,10 +9,11 @@ void SleepCommand::execute(std::vector<std::string> &args) {
   if ((int)args.size() != numArg()){
     throw "Not amount of arguments required";
   }
-  std::string str_milliseconds = args[0];
-  std::stringstream geek(str_milliseconds);
-  int milliseconds = 0;
-  geek >> milliseconds;
+  //sets argument
+  std::string str_milliseconds_exp = args[0];
+  //converts time to int
+  double val = this->evaluate_expression(str_milliseconds_exp);
+  int milliseconds = int(val);
   std::cout<<"now sleeping for "<<milliseconds<<std::endl;
   std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
   std::cout<<"I'm awake now"<<std::endl;

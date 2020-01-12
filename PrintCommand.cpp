@@ -7,13 +7,23 @@ void PrintCommand::execute(std::vector<std::string> &args) {
   if ((int )args.size() != numArg()){
     throw "Not amount of arguments required";
   }
+  //checks if the argument is a string to print
   if (isInQuotations(args[0])){
     std::string msg = args[0];
     remove_quotation(msg);
     std::cout<<msg<<std::endl;
   } else{
-    double val = shared_data->safe_getValue(args[0]);
-    std::cout<<val<<std::endl;
+    //getting variable to print
+    try {
+      double val = shared_data->safe_getValue(args[0]);
+      std::cout<<val<<std::endl;
+
+    } catch (const char* e){
+      //evaluate expression
+      double val = this->evaluate_expression(args[0]);
+      std::cout<<val<<std::endl;
+    }
+
   }
 }
 int PrintCommand::numArg() {

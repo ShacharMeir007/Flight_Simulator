@@ -13,6 +13,7 @@
 //this class.
 class SharedData {
  private:
+  //data tp share between threads
   std::vector<std::pair<std::string, std::string>>* vars_right_Bind = nullptr;
   std::vector<std::pair<std::string, std::string>>* vars_left_Bind = nullptr;
   std::vector<std::pair<std::string, std::string>>* vars_changed = nullptr;
@@ -20,13 +21,13 @@ class SharedData {
   SymbolTable* symbol_table_ = nullptr;
   bool terminate = false;
   bool terminated = false;
- public:
-
-  std::vector<std::string> safe_getVars();
-  //SymbolTable *safe_getSymbolTable();
   std::recursive_mutex mut;
+
+ public:
   SharedData();
   virtual ~SharedData();
+  //methods used to safely access shared data between different threads
+  std::vector<std::string> safe_getVars();
   void safe_changeValue(std::string &name, double value);
   void safe_add_to_change(std::pair<std::string, std::string>&);
   void safe_add_to_right(std::pair<std::string, std::string>&);

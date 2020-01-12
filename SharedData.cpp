@@ -45,9 +45,15 @@ void SharedData::safe_changeValue(std::string & name, double value) {
 }
 double SharedData::safe_getValue(std::string & name) {
   this->mut.lock();
-  double val = this->symbol_table_->get(name).GetValue();
-  this->mut.unlock();
-  return val;
+  try {
+    double val = this->symbol_table_->get(name).GetValue();
+    this->mut.unlock();
+    return val;
+  } catch(std::out_of_range& e) {
+    this->mut.unlock();
+    throw "not in symbol table";
+  }
+
 }
 std::string SharedData::safe_getSim(std::string & name) {
   this->mut.lock();

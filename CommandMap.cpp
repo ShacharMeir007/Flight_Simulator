@@ -14,6 +14,8 @@ Command* CommandMap::getCommand(std::string& s) {
 
 }
 CommandMap::CommandMap(SharedData* data, Interpreter* interpreter) {
+  // create every Command type object in advance more efficient
+  // for run time
   map_["openDataServer"] = new OpenDataServerCommand(data, interpreter);
   map_["connectControlClient"] = new ConnectClientCommand(data, interpreter);
   map_["Print"] = new PrintCommand(data, interpreter);

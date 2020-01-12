@@ -16,13 +16,16 @@ class Command {
  protected:
   Interpreter* interpreter_;
   SharedData* shared_data;
+  // initialize the interpreter's Variables
   void initInterpreterVar();
-  void setVariablesFromVector(vector<std::string> vector);
  public:
   Command(SharedData*, Interpreter*);
+  // execute the command
 virtual void execute(std::vector<std::string>& args) = 0;
+// returns number of arguments the command requires
 virtual int numArg() = 0;
 virtual ~Command()= default;;
+  double evaluate_expression(string &exp);
 };
 
 #endif //FLIGHT_SIMULATOR__COMMAND_H_

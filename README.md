@@ -17,3 +17,11 @@ and gave them to the object through the execute function.
 
 We Open a server and a client both of which connected to the flight gear simulator
 providing us with the simulators current settings and a way to change them.
+
+## To Compile
+run: g++ -std=c++14 */*.cpp */*/*.cpp  *.cpp -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -o a.out -pthread\
+then run: ./a.out file.txt \
+file.txt should be the file of commands
+for the simulator \
+github:
+https://github.com/ShacharMeir007/Flight_Simulator.git

@@ -43,14 +43,27 @@ std::vector<std::string> Lexer::lex() {
   std::string line;
   while (!(line = readLine()).empty()){
     strip(line);
-    if (!isAssign(line)){
+    if (isOpenDataServer(line)){
+      handleDataServer(line);
+    }
+    else if (isConnectControlClient(line)){
+      handleConnectClient(line);
+      replace('('," ",line);
+      replace(')',"",line);
+      replace(','," ", line);
+    } else if(isPrint(line)){
+      handlePrint(line);
+    } else if(isSleep(line)){
+      handlePrint(line);
+    }
+    else if (!isAssign(line)){
       replace('('," ",line);
       replace(')',"",line);
       replace(','," ", line);
     }
     makeConditionBetSpaces(line);
-    //spacen(line);
     remove_redundant_signs(line);
+
     std::vector<std::string> vector = split(' ', line);
     if(isVar(line)){
       handleVar(vector);
@@ -128,4 +141,55 @@ void Lexer::handleAssign(std::vector<std::string> &vector) {
   }
   newVec.push_back(expressionString);
   vector = newVec;
+}
+void Lexer::handleDataServer(std::string &str) {
+  std::string result;
+  int i=0;
+  int j = str.size();
+  while (str.substr(i,1)!="("){
+    result += str.substr(i,1);
+    i++;
+  }
+  while (str.substr(j-1,1)!=")"){
+    result += str.substr(j-1,1);
+    j--;
+  }
+  std::string exp = str.substr(i+1, j-i-2);
+  remove_spaces(exp);
+  result = result + " " +exp;
+  str = result;
+}
+void Lexer::handleConnectClient(std::string& str) {
+  std::string result;
+  int i=0;
+  int j = str.size();
+
+  while (str.substr(i,1)!=","){
+    result += str.substr(i,1);
+    i++;
+  }
+  std::string exp = str.substr(i+1, j-i-2);
+  remove_spaces(exp);
+  result = result + " " +exp;
+  str = result;
+}
+void Lexer::handlePrint(std::string &str) {
+  std::string result;
+  int i=0;
+  int j = str.size();
+  while (str.substr(i,1)!="("){
+    result += str.substr(i,1);
+    i++;
+  }
+  while (str.substr(j-1,1)!=")"){
+    result += str.substr(j-1,1);
+    j--;
+  }
+  std::string exp = str.substr(i+1, j-i-2);
+  if (!isInQuotations(exp)) {
+    remove_spaces(exp);
+  }
+  result = result + " " +exp;
+
+  str = result;
 }

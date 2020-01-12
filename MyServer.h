@@ -13,9 +13,12 @@
 #include <future>
 #include "SharedData.h"
 #include "TextFunctions.h"
+//runs the server
 void runDataServer(int port, SharedData* data);
-void openDataServer(int port, SharedData* data);
+// converts values from a vector of strings to a vector of doubles
 std::vector<double> convert_to_double(std::vector<std::string>& vector);
+//inserts values from vector to map in order
 void insert_values_to_map(std::map<std::string,double>& map, std::vector<double >& values);
+// opens thread to receive a connection from a client and returns it
 int receiveConnection(int port);
 #endif //FLIGHT_SIMULATOR__MYSERVER_H_

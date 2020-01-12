@@ -11,7 +11,6 @@
 #include "Expression/Interpreter.h"
 class Parser {
  private:
-  std::vector<std::string> *string_commands_;
   SharedData* data;
  public:
 

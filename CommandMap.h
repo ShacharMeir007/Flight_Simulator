@@ -15,8 +15,10 @@
 #include "AssignCommand.h"
 #include "IfWhileCommand.h"
 class CommandMap {
+  // map of commands
   std::unordered_map<std::string, Command*> map_;
  public:
+  //returns a command from string
   Command* getCommand(std::string& s);
   CommandMap(SharedData* data, Interpreter* interpreter);
 };
