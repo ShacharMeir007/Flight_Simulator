@@ -7,7 +7,7 @@
 #include <thread>
 void SleepCommand::execute(std::vector<std::string> &args) {
   if ((int)args.size() != numArg()){
-    throw "Not amount of arguments required";
+    throw "Not the amount of arguments required";
   }
   //sets argument
   std::string str_milliseconds_exp = args[0];

@@ -23,4 +23,5 @@ CommandMap::CommandMap(SharedData* data, Interpreter* interpreter) {
   map_["var"] = new VarCommand(data, interpreter);
   map_["="] = new AssignCommand(data, interpreter);
   map_["while"] = new IfWhileCommand(data, interpreter);
+  map_["if"] = new IfWhileCommand(data, interpreter);
 }

@@ -4,9 +4,9 @@
 
 #ifndef FLIGHT_SIMULATOR__MYSERVER_H_
 #define FLIGHT_SIMULATOR__MYSERVER_H_
-#include <sys/socket.h>
 #include <string>
 #include <iostream>
+#include <sys/socket.h>
 #include <unistd.h>
 #include <netinet/in.h>
 #include <thread>

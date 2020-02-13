@@ -100,16 +100,20 @@ void runDataServer(int client_socket, SharedData* data)
     //converts to string
     std::string buff(buffer);
     //separates to a vector of string values
-    std::vector<std::string> str_values = split(',',buff);
-    // converting values from string to double
-    std::vector<double> _values = convert_to_double(str_values);
-    //inserts to the table from above
-    insert_values_to_map(map, _values);
-    //updates the variables associated with properties
-    std::vector<std::pair<std::string,std::string>> bind_vars = data->safe_getVarsLeftBind();
-    for (std::pair<std::string,std::string> pair: bind_vars){
-      double new_val = map.at(pair.second);
-      data->safe_changeValue(pair.first, new_val);
+    std::vector<std::string> updates = split('\n',buff);
+    for (auto update: updates) {
+      if(update.empty()){ break;}
+      std::vector<std::string> str_values = split(',', update);
+      // converting values from string to double
+      std::vector<double> _values = convert_to_double(str_values);
+      //inserts to the table from above
+      insert_values_to_map(map, _values);
+      //updates the variables associated with properties
+      std::vector<std::pair<std::string, std::string>> bind_vars = data->safe_getVarsLeftBind();
+      for (std::pair<std::string, std::string> pair: bind_vars) {
+        double new_val = map.at(pair.second);
+        data->safe_changeValue(pair.first, new_val);
+      }
     }
   }
   //closes and notifies that the server is terminated
